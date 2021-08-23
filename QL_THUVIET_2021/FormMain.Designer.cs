@@ -87,6 +87,10 @@ namespace QL_THUVIET_2021
             this.đóngTrangNàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangKhácToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabDoiMatKhau = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabSinhVien = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabGioiThieu = new DevComponents.DotNetBar.TabItem(this.components);
@@ -94,8 +98,6 @@ namespace QL_THUVIET_2021
             this.tabSách = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabNhanVien = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabSinhVien = new DevComponents.DotNetBar.TabItem(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
@@ -190,7 +192,6 @@ namespace QL_THUVIET_2021
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Click += new System.EventHandler(this.ribbonPanel1_Click);
             // 
             // ribbonBar4
             // 
@@ -221,7 +222,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar4.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar4.ItemClick += new System.EventHandler(this.ribbonBar4_ItemClick);
             // 
             // btnDangXuat
             // 
@@ -263,7 +263,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar3.ItemClick += new System.EventHandler(this.ribbonBar3_ItemClick);
             // 
             // btnQLNguoiDung
             // 
@@ -306,7 +305,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar1.ItemClick += new System.EventHandler(this.ribbonBar1_ItemClick);
             // 
             // btnThayDoiMatKhau
             // 
@@ -317,7 +315,6 @@ namespace QL_THUVIET_2021
             this.btnThayDoiMatKhau.Name = "btnThayDoiMatKhau";
             this.btnThayDoiMatKhau.SubItemsExpandWidth = 14;
             this.btnThayDoiMatKhau.Text = "<div width= \"100\" align= \"center\"> Thay Đổi Mật Khẩu</div>";
-            this.btnThayDoiMatKhau.Click += new System.EventHandler(this.btnThayDoiMatKhau_Click);
             // 
             // ribbonPanel3
             // 
@@ -343,7 +340,6 @@ namespace QL_THUVIET_2021
             this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel3.TabIndex = 3;
             this.ribbonPanel3.Visible = false;
-            this.ribbonPanel3.Click += new System.EventHandler(this.ribbonPanel3_Click);
             // 
             // ribbonBar2
             // 
@@ -375,7 +371,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar2.ItemClick += new System.EventHandler(this.ribbonBar2_ItemClick);
             // 
             // galleryContainer1
             // 
@@ -548,7 +543,6 @@ namespace QL_THUVIET_2021
             this.ribbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel2.TabIndex = 2;
             this.ribbonPanel2.Visible = false;
-            this.ribbonPanel2.Click += new System.EventHandler(this.ribbonPanel2_Click);
             // 
             // ribbonBar7
             // 
@@ -579,7 +573,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar7.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar7.ItemClick += new System.EventHandler(this.ribbonBar7_ItemClick);
             // 
             // buttonItem2
             // 
@@ -590,7 +583,6 @@ namespace QL_THUVIET_2021
             this.buttonItem2.Name = "buttonItem2";
             this.buttonItem2.SubItemsExpandWidth = 14;
             this.buttonItem2.Text = "<div width =\"100\" align = \"Center\"> Quản Lý Mượn Trả</div>";
-            this.buttonItem2.Click += new System.EventHandler(this.buttonItem2_Click);
             // 
             // ribbonBar8
             // 
@@ -621,7 +613,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar8.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar8.ItemClick += new System.EventHandler(this.ribbonBar8_ItemClick);
             // 
             // buttonItem3
             // 
@@ -632,7 +623,6 @@ namespace QL_THUVIET_2021
             this.buttonItem3.Name = "buttonItem3";
             this.buttonItem3.SubItemsExpandWidth = 14;
             this.buttonItem3.Text = "<div width =\"100\" align = \"Center\"> Quản Lý Thể Loại</div>";
-            this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click);
             // 
             // ribbonBar11
             // 
@@ -663,7 +653,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar11.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar11.ItemClick += new System.EventHandler(this.ribbonBar11_ItemClick);
             // 
             // buttonItem4
             // 
@@ -674,7 +663,6 @@ namespace QL_THUVIET_2021
             this.buttonItem4.Name = "buttonItem4";
             this.buttonItem4.SubItemsExpandWidth = 14;
             this.buttonItem4.Text = "<div width =\"100\" align = \"Center\"> QL Thẻ Thư Viện</div>";
-            this.buttonItem4.Click += new System.EventHandler(this.buttonItem4_Click);
             // 
             // ribbonBar12
             // 
@@ -705,7 +693,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar12.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar12.ItemClick += new System.EventHandler(this.ribbonBar12_ItemClick);
             // 
             // buttonItem5
             // 
@@ -716,7 +703,6 @@ namespace QL_THUVIET_2021
             this.buttonItem5.Name = "buttonItem5";
             this.buttonItem5.SubItemsExpandWidth = 14;
             this.buttonItem5.Text = "<div width =\"100\" align = \"Center\"> Quản Lý Sách</div>";
-            this.buttonItem5.Click += new System.EventHandler(this.buttonItem5_Click);
             // 
             // ribbonPanel5
             // 
@@ -741,7 +727,6 @@ namespace QL_THUVIET_2021
             this.ribbonPanel5.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel5.TabIndex = 5;
             this.ribbonPanel5.Visible = false;
-            this.ribbonPanel5.Click += new System.EventHandler(this.ribbonPanel5_Click);
             // 
             // ribbonPanel4
             // 
@@ -770,7 +755,6 @@ namespace QL_THUVIET_2021
             this.ribbonPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel4.TabIndex = 4;
             this.ribbonPanel4.Visible = false;
-            this.ribbonPanel4.Click += new System.EventHandler(this.ribbonPanel4_Click);
             // 
             // ribbonBar9
             // 
@@ -801,7 +785,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar9.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar9.ItemClick += new System.EventHandler(this.ribbonBar9_ItemClick);
             // 
             // btnNhaXuatBan
             // 
@@ -812,7 +795,6 @@ namespace QL_THUVIET_2021
             this.btnNhaXuatBan.Name = "btnNhaXuatBan";
             this.btnNhaXuatBan.SubItemsExpandWidth = 14;
             this.btnNhaXuatBan.Text = "<div width =\"100\" align = \"Center\"> QL Nhà Xuất Bản</div>";
-            this.btnNhaXuatBan.Click += new System.EventHandler(this.btnNhaXuatBan_Click);
             // 
             // ribbonBar10
             // 
@@ -843,7 +825,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar10.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar10.ItemClick += new System.EventHandler(this.ribbonBar10_ItemClick);
             // 
             // btnTacGia
             // 
@@ -854,7 +835,6 @@ namespace QL_THUVIET_2021
             this.btnTacGia.Name = "btnTacGia";
             this.btnTacGia.SubItemsExpandWidth = 14;
             this.btnTacGia.Text = "<div width =\"100\" align = \"Center\"> Quản Lý Tác Giả</div>";
-            this.btnTacGia.Click += new System.EventHandler(this.btnTacGia_Click);
             // 
             // ribbonBar5
             // 
@@ -885,7 +865,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar5.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar5.ItemClick += new System.EventHandler(this.ribbonBar5_ItemClick);
             // 
             // btnQLSinhVien
             // 
@@ -896,7 +875,6 @@ namespace QL_THUVIET_2021
             this.btnQLSinhVien.Name = "btnQLSinhVien";
             this.btnQLSinhVien.SubItemsExpandWidth = 14;
             this.btnQLSinhVien.Text = "<div width =\"100\" align = \"Center\"> Quản Lý Sinh Viên</div>";
-            this.btnQLSinhVien.Click += new System.EventHandler(this.btnQLSinhVien_Click);
             // 
             // ribbonBar6
             // 
@@ -927,7 +905,6 @@ namespace QL_THUVIET_2021
             // 
             // 
             this.ribbonBar6.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar6.ItemClick += new System.EventHandler(this.ribbonBar6_ItemClick);
             // 
             // btnQLNhanVien
             // 
@@ -938,7 +915,6 @@ namespace QL_THUVIET_2021
             this.btnQLNhanVien.Name = "btnQLNhanVien";
             this.btnQLNhanVien.SubItemsExpandWidth = 14;
             this.btnQLNhanVien.Text = "<div width =\"100\" align = \"Center\"> Quản Lý Nhân Viên</div>";
-            this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
             // 
             // tabHeThong
             // 
@@ -946,35 +922,30 @@ namespace QL_THUVIET_2021
             this.tabHeThong.Name = "tabHeThong";
             this.tabHeThong.Panel = this.ribbonPanel1;
             this.tabHeThong.Text = "Hệ Thống";
-            this.tabHeThong.Click += new System.EventHandler(this.tabHeThong_Click);
             // 
             // tabDanhMuc
             // 
             this.tabDanhMuc.Name = "tabDanhMuc";
             this.tabDanhMuc.Panel = this.ribbonPanel4;
             this.tabDanhMuc.Text = "Danh Mục";
-            this.tabDanhMuc.Click += new System.EventHandler(this.tabDanhMuc_Click);
             // 
             // tabQuanLy
             // 
             this.tabQuanLy.Name = "tabQuanLy";
             this.tabQuanLy.Panel = this.ribbonPanel2;
             this.tabQuanLy.Text = "Quản Lý";
-            this.tabQuanLy.Click += new System.EventHandler(this.tabQuanLy_Click);
             // 
             // ribbonTabItem1
             // 
             this.ribbonTabItem1.Name = "ribbonTabItem1";
             this.ribbonTabItem1.Panel = this.ribbonPanel3;
             this.ribbonTabItem1.Text = "Ứng Dụng";
-            this.ribbonTabItem1.Click += new System.EventHandler(this.ribbonTabItem1_Click);
             // 
             // tabTroGiup
             // 
             this.tabTroGiup.Name = "tabTroGiup";
             this.tabTroGiup.Panel = this.ribbonPanel5;
             this.tabTroGiup.Text = "Trợ Giúp";
-            this.tabTroGiup.Click += new System.EventHandler(this.tabTroGiup_Click);
             // 
             // qatCustomizeItem1
             // 
@@ -997,8 +968,9 @@ namespace QL_THUVIET_2021
             this.tabMain.CloseButtonOnTabsVisible = true;
             this.tabMain.CloseButtonPosition = DevComponents.DotNetBar.eTabCloseButtonPosition.Right;
             this.tabMain.ContextMenuStrip = this.ctmnMain;
-            this.tabMain.Controls.Add(this.tabControlPanel2);
             this.tabMain.Controls.Add(this.tabControlPanel1);
+            this.tabMain.Controls.Add(this.tabControlPanel5);
+            this.tabMain.Controls.Add(this.tabControlPanel2);
             this.tabMain.Controls.Add(this.tabControlPanel4);
             this.tabMain.Controls.Add(this.tabControlPanel3);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1006,16 +978,16 @@ namespace QL_THUVIET_2021
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.tabMain.SelectedTabIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(1051, 373);
+            this.tabMain.Size = new System.Drawing.Size(1051, 372);
             this.tabMain.TabIndex = 1;
             this.tabMain.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabMain.Tabs.Add(this.tabGioiThieu);
             this.tabMain.Tabs.Add(this.tabSinhVien);
             this.tabMain.Tabs.Add(this.tabNhanVien);
             this.tabMain.Tabs.Add(this.tabSách);
+            this.tabMain.Tabs.Add(this.tabDoiMatKhau);
             this.tabMain.Text = "tabControl1";
             this.tabMain.TabItemClose += new DevComponents.DotNetBar.TabStrip.UserActionEventHandler(this.tabMain_TabItemClose);
-            this.tabMain.Click += new System.EventHandler(this.tabMain_Click);
             // 
             // ctmnMain
             // 
@@ -1056,6 +1028,52 @@ namespace QL_THUVIET_2021
             this.đóngTấtCảToolStripMenuItem.Text = "Đóng tất cả";
             this.đóngTấtCảToolStripMenuItem.Click += new System.EventHandler(this.đóngTấtCảToolStripMenuItem_Click);
             // 
+            // tabControlPanel5
+            // 
+            this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel5.Location = new System.Drawing.Point(0, 31);
+            this.tabControlPanel5.Name = "tabControlPanel5";
+            this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel5.Size = new System.Drawing.Size(1051, 341);
+            this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel5.Style.GradientAngle = 90;
+            this.tabControlPanel5.TabIndex = 5;
+            this.tabControlPanel5.TabItem = this.tabDoiMatKhau;
+            // 
+            // tabDoiMatKhau
+            // 
+            this.tabDoiMatKhau.AttachedControl = this.tabControlPanel5;
+            this.tabDoiMatKhau.Name = "tabDoiMatKhau";
+            this.tabDoiMatKhau.Text = "Đổi Mật KHẩu";
+            // 
+            // tabControlPanel2
+            // 
+            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel2.Location = new System.Drawing.Point(0, 31);
+            this.tabControlPanel2.Name = "tabControlPanel2";
+            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel2.Size = new System.Drawing.Size(1051, 341);
+            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.GradientAngle = 90;
+            this.tabControlPanel2.TabIndex = 2;
+            this.tabControlPanel2.TabItem = this.tabSinhVien;
+            // 
+            // tabSinhVien
+            // 
+            this.tabSinhVien.AttachedControl = this.tabControlPanel2;
+            this.tabSinhVien.Name = "tabSinhVien";
+            this.tabSinhVien.Text = "Sinh Viên";
+            // 
             // tabControlPanel1
             // 
             this.tabControlPanel1.Controls.Add(this.pictureBox1);
@@ -1063,7 +1081,7 @@ namespace QL_THUVIET_2021
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 31);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(1051, 342);
+            this.tabControlPanel1.Size = new System.Drawing.Size(1051, 341);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1073,7 +1091,6 @@ namespace QL_THUVIET_2021
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabGioiThieu;
-            this.tabControlPanel1.Click += new System.EventHandler(this.tabControlPanel1_Click);
             // 
             // pictureBox1
             // 
@@ -1081,7 +1098,7 @@ namespace QL_THUVIET_2021
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1049, 340);
+            this.pictureBox1.Size = new System.Drawing.Size(1049, 339);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -1099,7 +1116,7 @@ namespace QL_THUVIET_2021
             this.tabControlPanel4.Location = new System.Drawing.Point(0, 31);
             this.tabControlPanel4.Name = "tabControlPanel4";
             this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(1051, 342);
+            this.tabControlPanel4.Size = new System.Drawing.Size(1051, 341);
             this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1109,7 +1126,6 @@ namespace QL_THUVIET_2021
             this.tabControlPanel4.Style.GradientAngle = 90;
             this.tabControlPanel4.TabIndex = 4;
             this.tabControlPanel4.TabItem = this.tabSách;
-            this.tabControlPanel4.Click += new System.EventHandler(this.tabControlPanel4_Click);
             // 
             // tabSách
             // 
@@ -1123,7 +1139,7 @@ namespace QL_THUVIET_2021
             this.tabControlPanel3.Location = new System.Drawing.Point(0, 31);
             this.tabControlPanel3.Name = "tabControlPanel3";
             this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(1051, 342);
+            this.tabControlPanel3.Size = new System.Drawing.Size(1051, 341);
             this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1140,38 +1156,14 @@ namespace QL_THUVIET_2021
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Text = "Nhân Viên";
             // 
-            // tabControlPanel2
-            // 
-            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel2.Location = new System.Drawing.Point(0, 31);
-            this.tabControlPanel2.Name = "tabControlPanel2";
-            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(1051, 342);
-            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel2.Style.GradientAngle = 90;
-            this.tabControlPanel2.TabIndex = 2;
-            this.tabControlPanel2.TabItem = this.tabSinhVien;
-            // 
-            // tabSinhVien
-            // 
-            this.tabSinhVien.AttachedControl = this.tabControlPanel2;
-            this.tabSinhVien.Name = "tabSinhVien";
-            this.tabSinhVien.Text = "Sinh Viên";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(5, 563);
+            this.panel1.Location = new System.Drawing.Point(5, 562);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1051, 31);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -1182,7 +1174,6 @@ namespace QL_THUVIET_2021
             this.label1.Size = new System.Drawing.Size(484, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "From: K\' Vảng and Hửu Tuấn -- kvang05112002@gmail.com";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonItem1
             // 
@@ -1193,7 +1184,6 @@ namespace QL_THUVIET_2021
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.SubItemsExpandWidth = 14;
             this.buttonItem1.Text = "<div width= \"100\" align= \"center\"> Thay Đổi Mật Khẩu</div>";
-            this.buttonItem1.Click += new System.EventHandler(this.buttonItem1_Click);
             // 
             // buttonItem14
             // 
@@ -1204,7 +1194,6 @@ namespace QL_THUVIET_2021
             this.buttonItem14.Name = "buttonItem14";
             this.buttonItem14.SubItemsExpandWidth = 14;
             this.buttonItem14.Text = "<div width= \"100\" align= \"center\"> Thay Đổi Mật Khẩu</div>";
-            this.buttonItem14.Click += new System.EventHandler(this.buttonItem14_Click);
             // 
             // buttonItem16
             // 
@@ -1215,7 +1204,6 @@ namespace QL_THUVIET_2021
             this.buttonItem16.Name = "buttonItem16";
             this.buttonItem16.SubItemsExpandWidth = 14;
             this.buttonItem16.Text = "<div width= \"100\" align= \"center\"> Quản Lý Người Dùng</div>";
-            this.buttonItem16.Click += new System.EventHandler(this.buttonItem16_Click);
             // 
             // buttonItem8
             // 
@@ -1245,7 +1233,7 @@ namespace QL_THUVIET_2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 596);
+            this.ClientSize = new System.Drawing.Size(1061, 595);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.ribbonControl1);
@@ -1349,5 +1337,7 @@ namespace QL_THUVIET_2021
         private DevComponents.DotNetBar.ButtonItem buttonItem8;
         private DevComponents.DotNetBar.ButtonItem buttonItem11;
         private DevComponents.DotNetBar.ButtonItem buttonItem18;
+        private DevComponents.DotNetBar.TabControlPanel tabControlPanel5;
+        private DevComponents.DotNetBar.TabItem tabDoiMatKhau;
     }
 }
