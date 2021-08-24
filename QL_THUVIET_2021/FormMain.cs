@@ -70,7 +70,7 @@ namespace QL_THUVIET_2021
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            var dangxuat = MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Hỏi", MessageBoxButtons.YesNo);
+            var dangxuat = MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Xác Nhận", MessageBoxButtons.YesNo);
             if (dangxuat == DialogResult.Yes)
             {
                 this.Close();
