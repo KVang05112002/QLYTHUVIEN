@@ -70,9 +70,13 @@ namespace QL_THUVIET_2021
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Login lg = new Login();
-            lg.Show();
+            var dangxuat = MessageBox.Show("Bạn Có Muốn Đăng Xuất không?", "Hỏi", MessageBoxButtons.YesNo);
+            if (dangxuat == DialogResult.Yes)
+            {
+                this.Close();
+                Login lg = new Login();
+                lg.Show();
+            }
         }
 
        
@@ -135,6 +139,12 @@ namespace QL_THUVIET_2021
         private void buttonItem23_Click(object sender, EventArgs e)
         {
             styleManager1.ManagerStyle = eStyle.Windows7Blue;
+        }
+
+        private void btnThayDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            FormDoiMatKhau fdmk = new FormDoiMatKhau();
+            fdmk.ShowDialog();
         }
     }
 }
