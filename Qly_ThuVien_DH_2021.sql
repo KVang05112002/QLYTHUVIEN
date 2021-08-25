@@ -12,7 +12,9 @@ create table TaiKhoan
 	MatKhau varchar(50),
 	Quyen nvarchar(50)
 )
-
+alter table TaiKhoan
+drop column Masv
+select*from TaiKhoan
 create table TacGia
 (
 	MaTG varchar(20) primary key,
@@ -113,3 +115,4 @@ add foreign key (MaMT) references MuonTra(MaMT)
 insert into TaiKhoan values ('TK01', '', N'admin', '123456789', 'Admin')
 insert into TaiKhoan values ('TK02', '', N'NhanVien', '123456789', N'Nhân Viên')
 select * from TaiKhoan
+
