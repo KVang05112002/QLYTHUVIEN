@@ -66,8 +66,7 @@ namespace QL_THUVIET_2021
         private void btnQLNguoiDung_Click(object sender, EventArgs e)
         {
             FormTaiKhoan ftk = new FormTaiKhoan();
-            //add
-            //ftk.ShowDialog();
+            ftk.ShowDialog();
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

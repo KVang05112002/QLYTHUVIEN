@@ -16,6 +16,7 @@ namespace QL_THUVIET_2021
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new FormTaiKhoan());
             Application.Run(new Login());
         }
     }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QL_THUVIET_2021
 {
-    public partial class FormTaiKhoan : UserControl
+    public partial class FormTaiKhoan : Form
     {
         public FormTaiKhoan()
         {
