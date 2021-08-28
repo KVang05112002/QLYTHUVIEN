@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QL_THUVIET_2021.Class;
 
 namespace QL_THUVIET_2021
 {

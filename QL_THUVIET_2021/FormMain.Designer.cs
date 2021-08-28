@@ -90,8 +90,6 @@ namespace QL_THUVIET_2021
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabGioiThieu = new DevComponents.DotNetBar.TabItem(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem14 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem16 = new DevComponents.DotNetBar.ButtonItem();
@@ -108,7 +106,6 @@ namespace QL_THUVIET_2021
             this.ctmnMain.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -973,6 +970,7 @@ namespace QL_THUVIET_2021
             this.tabMain.Tabs.Add(this.tabGioiThieu);
             this.tabMain.Text = "tabControl1";
             this.tabMain.TabItemClose += new DevComponents.DotNetBar.TabStrip.UserActionEventHandler(this.tabMain_TabItemClose);
+            this.tabMain.Click += new System.EventHandler(this.tabMain_Click);
             // 
             // ctmnMain
             // 
@@ -1049,25 +1047,6 @@ namespace QL_THUVIET_2021
             this.tabGioiThieu.Name = "tabGioiThieu";
             this.tabGioiThieu.Text = "Giới Thiệu";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(5, 554);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1051, 31);
-            this.panel1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("TNKeyUni-Allegien", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(484, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "From: K\' Vảng and Hửu Tuấn -- kvang05112002@gmail.com";
-            // 
             // buttonItem1
             // 
             this.buttonItem1.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem1.Image")));
@@ -1127,7 +1106,6 @@ namespace QL_THUVIET_2021
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 587);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1149,8 +1127,6 @@ namespace QL_THUVIET_2021
             this.ctmnMain.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1201,8 +1177,6 @@ namespace QL_THUVIET_2021
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevComponents.DotNetBar.TabItem tabGioiThieu;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip ctmnMain;
         private System.Windows.Forms.ToolStripMenuItem đóngTrangNàyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đóngTrangKhácToolStripMenuItem;

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QL_THUVIET_2021.Class;
 
 namespace QL_THUVIET_2021
 {
@@ -19,7 +20,7 @@ namespace QL_THUVIET_2021
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            Class.Function.Connect();
         }
         private void Closethis()
         {
@@ -66,7 +67,8 @@ namespace QL_THUVIET_2021
         private void btnQLNguoiDung_Click(object sender, EventArgs e)
         {
             FormTaiKhoan ftk = new FormTaiKhoan();
-            ftk.ShowDialog();
+            AddNewTab("QL Tài Khoản", ftk);
+            //ftk.ShowDialog();
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -146,6 +148,47 @@ namespace QL_THUVIET_2021
         {
             FormDoiMatKhau fdmk = new FormDoiMatKhau();
             fdmk.ShowDialog();
+        }
+
+        private void tabMain_Click(object sender, EventArgs e)
+        {
+            
+        }
+        public void AddNewTab(string tabname, UserControl uccontrol)
+        {
+            foreach (TabItem tab in tabMain.Tabs)
+            {
+                if (tab.Text == tabname)
+                {
+                    tabMain.SelectedTab = tab;
+                    return;
+                }
+            }
+            TabControlPanel newTabPanel = new TabControlPanel();
+            TabItem newTabPage = new TabItem(components);
+            newTabPanel.Dock = DockStyle.Fill;
+            newTabPanel.Location = new System.Drawing.Point(0, 26);
+            newTabPanel.Name = "panel" + tabname;
+            newTabPanel.Padding = new System.Windows.Forms.Padding(1);
+            newTabPanel.Size = new System.Drawing.Size(1000, 396);
+            newTabPanel.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            newTabPanel.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            newTabPanel.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            newTabPanel.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            newTabPanel.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            newTabPanel.Style.GradientAngle = 90;
+            newTabPanel.TabIndex = 2;
+            newTabPanel.TabItem = newTabPage;
+            Random ran = new Random();
+            newTabPage.Name = tabname + ran.Next(100000) + ran.Next(22342);
+            newTabPage.AttachedControl = newTabPanel;
+            newTabPage.Text = tabname;
+            uccontrol.Dock = DockStyle.Fill;
+            newTabPanel.Controls.Add(uccontrol);
+            tabMain.Controls.Add(newTabPanel);
+            tabMain.Tabs.Add(newTabPage);
+            tabMain.SelectedTab = newTabPage;
         }
     }
 }

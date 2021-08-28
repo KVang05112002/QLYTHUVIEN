@@ -70,6 +70,7 @@
     <Compile Include="FormTaiKhoan.Designer.cs">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Function.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
