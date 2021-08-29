@@ -34,6 +34,12 @@ namespace QL_THUVIET_2021
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dtgTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.btnXuat = new DevComponents.DotNetBar.ButtonX();
+            this.btnLuu = new DevComponents.DotNetBar.ButtonX();
+            this.btnSua = new DevComponents.DotNetBar.ButtonX();
+            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
+            this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -45,19 +51,13 @@ namespace QL_THUVIET_2021
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnXuat = new DevComponents.DotNetBar.ButtonX();
-            this.btnLuu = new DevComponents.DotNetBar.ButtonX();
-            this.btnSua = new DevComponents.DotNetBar.ButtonX();
-            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
-            this.btnThem = new DevComponents.DotNetBar.ButtonX();
-            this.dtgTaiKhoan = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTaiKhoan)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgTaiKhoan)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,6 +110,110 @@ namespace QL_THUVIET_2021
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1000, 319);
             this.panel4.TabIndex = 1;
+            // 
+            // dtgTaiKhoan
+            // 
+            this.dtgTaiKhoan.AllowUserToOrderColumns = true;
+            this.dtgTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtgTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgTaiKhoan.Location = new System.Drawing.Point(15, 95);
+            this.dtgTaiKhoan.Name = "dtgTaiKhoan";
+            this.dtgTaiKhoan.RowHeadersWidth = 51;
+            this.dtgTaiKhoan.RowTemplate.Height = 24;
+            this.dtgTaiKhoan.Size = new System.Drawing.Size(973, 209);
+            this.dtgTaiKhoan.TabIndex = 16;
+            this.dtgTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTaiKhoan_CellContentClick);
+            // 
+            // btnXuat
+            // 
+            this.btnXuat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXuat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnXuat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnXuat.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
+            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
+            this.btnXuat.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.btnXuat.ImageTextSpacing = 10;
+            this.btnXuat.Location = new System.Drawing.Point(806, 17);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(150, 55);
+            this.btnXuat.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnXuat.TabIndex = 15;
+            this.btnXuat.Text = "Xuất";
+            this.btnXuat.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnLuu.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.btnLuu.ImageTextSpacing = 10;
+            this.btnLuu.Location = new System.Drawing.Point(620, 17);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(150, 55);
+            this.btnLuu.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnLuu.TabIndex = 14;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            // 
+            // btnSua
+            // 
+            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSua.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.btnSua.ImageTextSpacing = 10;
+            this.btnSua.Location = new System.Drawing.Point(437, 17);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(150, 55);
+            this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnSua.TabIndex = 13;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnXoa.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.btnXoa.ImageTextSpacing = 10;
+            this.btnXoa.Location = new System.Drawing.Point(256, 17);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(150, 55);
+            this.btnXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnXoa.TabIndex = 12;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            // 
+            // btnThem
+            // 
+            this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThem.HoverImage = ((System.Drawing.Image)(resources.GetObject("btnThem.HoverImage")));
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.btnThem.ImageTextSpacing = 10;
+            this.btnThem.Location = new System.Drawing.Point(82, 17);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(150, 55);
+            this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnThem.TabIndex = 11;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // panel3
             // 
@@ -229,109 +333,6 @@ namespace QL_THUVIET_2021
             this.label2.TabIndex = 7;
             this.label2.Text = "ID Tài Khoản:";
             // 
-            // btnXuat
-            // 
-            this.btnXuat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXuat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnXuat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXuat.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
-            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
-            this.btnXuat.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnXuat.ImageTextSpacing = 10;
-            this.btnXuat.Location = new System.Drawing.Point(806, 17);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(150, 55);
-            this.btnXuat.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnXuat.TabIndex = 15;
-            this.btnXuat.Text = "Xuất";
-            this.btnXuat.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLuu.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnLuu.ImageTextSpacing = 10;
-            this.btnLuu.Location = new System.Drawing.Point(620, 17);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(150, 55);
-            this.btnLuu.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnLuu.TabIndex = 14;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            // 
-            // btnSua
-            // 
-            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSua.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnSua.ImageTextSpacing = 10;
-            this.btnSua.Location = new System.Drawing.Point(437, 17);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(150, 55);
-            this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnSua.TabIndex = 13;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXoa.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnXoa.ImageTextSpacing = 10;
-            this.btnXoa.Location = new System.Drawing.Point(256, 17);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(150, 55);
-            this.btnXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnXoa.TabIndex = 12;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            // 
-            // btnThem
-            // 
-            this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThem.HoverImage = ((System.Drawing.Image)(resources.GetObject("btnThem.HoverImage")));
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnThem.ImageTextSpacing = 10;
-            this.btnThem.Location = new System.Drawing.Point(82, 17);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(150, 55);
-            this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnThem.TabIndex = 11;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            // 
-            // dtgTaiKhoan
-            // 
-            this.dtgTaiKhoan.AllowUserToOrderColumns = true;
-            this.dtgTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtgTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgTaiKhoan.Location = new System.Drawing.Point(15, 95);
-            this.dtgTaiKhoan.Name = "dtgTaiKhoan";
-            this.dtgTaiKhoan.RowHeadersWidth = 51;
-            this.dtgTaiKhoan.RowTemplate.Height = 24;
-            this.dtgTaiKhoan.Size = new System.Drawing.Size(973, 209);
-            this.dtgTaiKhoan.TabIndex = 16;
-            this.dtgTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTaiKhoan_CellContentClick);
-            // 
             // FormTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -349,11 +350,11 @@ namespace QL_THUVIET_2021
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTaiKhoan)).EndInit();
             this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgTaiKhoan)).EndInit();
             this.ResumeLayout(false);
 
         }

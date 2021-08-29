@@ -1,4 +1,4 @@
-Create database QLY_ThuVien_DH
+﻿Create database QLY_ThuVien_DH
 go
 
 use QLY_ThuVien_DH
@@ -113,6 +113,31 @@ alter table CTMuonTra
 add foreign key (MaMT) references MuonTra(MaMT)
 
 insert into TaiKhoan values ('TK01', '', N'admin', '123456789', 'Admin')
-insert into TaiKhoan values ('TK02', '', N'NhanVien', '123456789', N'Nh�n Vi�n')
+insert into TaiKhoan values ('TK02', '', N'NhanVien', '123456789', N'Nhân Viên')
 select * from TaiKhoan
+--tạo proceducer sinh mã tự động cho bảng TaiKhoan
+create proc sp_TaiKhoan_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
 
+	select @max=Count(ID) + 1 from TaiKhoan where ID like 'TK'
+	set @ma_next = 'TK' + right('0' + cast(@max as varchar(20)),20)
+
+	while (exists(select ID from TaiKhoan where ID = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='TK' + RIGHT('0' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+
+declare @return_Value int
+execute @return_Value = [dbo].[sp_TaiKhoan_SinhMaTuDong]
+select 'Return Value' = @return_Value
+go
+
+insert into TaiKhoan(ID,TenTK,MatKhau,Quyen) values
+('', N'admin', '123456789', 'Admin')
+select*from TaiKhoan

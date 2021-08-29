@@ -21,7 +21,7 @@ namespace QL_THUVIET_2021
         DataTable tbTaiKhoan;
         private void FormTaiKhoan_Load(object sender, EventArgs e)
         {
-            txtIDTaiKhoan.Enabled = true;
+            txtIDTaiKhoan.ReadOnly = true;
             btnLuu.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
@@ -67,5 +67,25 @@ namespace QL_THUVIET_2021
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
         }
+        private void ResetValue()
+        {
+            txtIDTaiKhoan.Text = "";
+            TxtTenDangNhap.Text = "";
+            txtMatKhau.Text = "";
+            cboQuyen.Text = "";
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            btnLuu.Enabled = true;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            ResetValue();
+            string sql;
+            sql = "Execute dbo.sp_TaiKhoan_SinhMaTuDong";
+            txtIDTaiKhoan.Text = Function.GetFieldValues(sql);
+            txtIDTaiKhoan.Focus();
+            LoadDataGridview();
+        }
+        
     }
 }

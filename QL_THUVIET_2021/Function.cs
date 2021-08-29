@@ -18,9 +18,6 @@ namespace QL_THUVIET_2021.Class
             conn = new SqlConnection();
             conn.ConnectionString = "Data Source=DESKTOP-BPN90P8;Initial Catalog=QLY_ThuVien_DH;Persist Security Info=True;User ID=sa;Password=05112002@VANG";
             conn.Open();
-            if (conn.State == ConnectionState.Open)
-                MessageBox.Show("kết nối thành công");
-            else MessageBox.Show("kết nối thất bại");
         }
         public static void Disconnect()
         {
@@ -51,5 +48,17 @@ namespace QL_THUVIET_2021.Class
             cbo.DisplayMember = quyen; //trường hiển thị
 
         }
+        public static string GetFieldValues(string sql)
+        {
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+                ma = reader.GetValue(0).ToString();
+            reader.Close();
+            return ma;
+        }
+
     }
 }
