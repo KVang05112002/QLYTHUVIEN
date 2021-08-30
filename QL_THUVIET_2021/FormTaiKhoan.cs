@@ -86,6 +86,95 @@ namespace QL_THUVIET_2021
             txtIDTaiKhoan.Focus();
             LoadDataGridview();
         }
-        
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if(txtIDTaiKhoan.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn chưa nhập ID tài khoản người dùng!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIDTaiKhoan.Focus();
+                return;
+            }    
+            if(TxtTenDangNhap.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tên đăng nhập người dùng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtTenDangNhap.Focus();
+                return;
+            }    
+            if(txtMatKhau.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mật khẩu cho người dùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMatKhau.Focus();
+                return;
+            }    
+            if(cboQuyen.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn chưa phân quyền cho người dùng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cboQuyen.Focus();
+                return;
+            }
+            sql = "Select ID from TaiKhoan where ID=N'" + txtIDTaiKhoan.Text.Trim() + "'";
+            if(Class.Function.KiemTraKhoaTrung(sql) )
+            {
+                MessageBox.Show("ID Tài khoản này đã có!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtIDTaiKhoan.Focus();
+                return;
+            }
+            sql = "Insert into TaiKhoan Values ('" + txtIDTaiKhoan.Text.Trim() + "','" + TxtTenDangNhap.Text.Trim() + "','" + txtMatKhau.Text.Trim() + "','" + cboQuyen.Text.Trim() + "')";
+            Class.Function.RunSQL(sql);
+            LoadDataGridview();
+            ResetValue();
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnThem.Enabled = true;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if(tbTaiKhoan.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu cần xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }    
+            if(txtIDTaiKhoan.Text == "")
+            {
+                MessageBox.Show("Bạn Phải chon ID tài khoản", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }    
+            if(MessageBox.Show("Bạn có muốn xóa bảng ghi này không?", "Thong Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                sql = "Delete TaiKhoan where ID =N'" + txtIDTaiKhoan.Text + "'";
+                Class.Function.RunSQL(sql);
+                LoadDataGridview();
+                ResetValue();
+            }    
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if(tbTaiKhoan.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có thông tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtIDTaiKhoan.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn chưa nhập ID tài khoản người dùng!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIDTaiKhoan.Focus();
+                return;
+            }
+            sql = "Update TaiKhoan set ID=N'" + txtIDTaiKhoan.Text.ToString() + "', TenTK=N'" + TxtTenDangNhap.Text.ToString() + "', MatKhau=N'" + txtMatKhau.Text.ToString() + "', Quyen=N'" + cboQuyen.Text.ToString() + "' where ID=N'" + txtIDTaiKhoan.Text + "'";
+            Class.Function.RunSQL(sql);
+            LoadDataGridview();
+            ResetValue();
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

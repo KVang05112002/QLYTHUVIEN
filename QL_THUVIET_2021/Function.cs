@@ -59,6 +59,31 @@ namespace QL_THUVIET_2021.Class
             reader.Close();
             return ma;
         }
-
+        public static bool KiemTraKhoaTrung(string sql)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+        public static void RunSQL(string sql)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = sql;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            cmd.Dispose();
+            cmd = null;
+        }
     }
 }

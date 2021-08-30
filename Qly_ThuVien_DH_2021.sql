@@ -138,6 +138,5 @@ execute @return_Value = [dbo].[sp_TaiKhoan_SinhMaTuDong]
 select 'Return Value' = @return_Value
 go
 
-insert into TaiKhoan(ID,TenTK,MatKhau,Quyen) values
-('', N'admin', '123456789', 'Admin')
+
 select*from TaiKhoan

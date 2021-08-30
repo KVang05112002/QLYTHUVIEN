@@ -141,6 +141,7 @@ namespace QL_THUVIET_2021
             this.btnXuat.TabIndex = 15;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnLuu
             // 
@@ -159,6 +160,7 @@ namespace QL_THUVIET_2021
             this.btnLuu.TabIndex = 14;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
@@ -177,6 +179,7 @@ namespace QL_THUVIET_2021
             this.btnSua.TabIndex = 13;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -195,6 +198,7 @@ namespace QL_THUVIET_2021
             this.btnXoa.TabIndex = 12;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
