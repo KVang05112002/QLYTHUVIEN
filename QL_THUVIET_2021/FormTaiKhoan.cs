@@ -176,5 +176,10 @@ namespace QL_THUVIET_2021
         {
 
         }
+
+        private void txtIDTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

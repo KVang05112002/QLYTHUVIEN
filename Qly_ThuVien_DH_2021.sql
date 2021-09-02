@@ -87,7 +87,7 @@ create table SinhVien
 
 create table MuonTra
 (
-	MaMT varchar(20) primary key,
+	MaMT varchar(20) primary key Constraint MaMT DEFAULT dbo.auto_MuonTra(),
 	SoThe varchar(20),
 	MaNV varchar(20),
 	MaSV varchar(20),
@@ -115,6 +115,18 @@ add foreign key (MaMT) references MuonTra(MaMT)
 insert into TaiKhoan values ('TK01', '', N'admin', '123456789', 'Admin')
 insert into TaiKhoan values ('TK02', '', N'NhanVien', '123456789', N'Nhân Viên')
 select * from TaiKhoan
+
+--ràng buộc 
+--1. giới tính chỉ có nam hoặc nữ
+alter table NhanVien
+add constraint NhanVien_GioiTinh_c Check (GioiTinh = N'Nam' or GioiTinh = N'Nữ')
+--Sinh Viên
+alter table SinhVien
+add Constraint SinhVien_GioiTinh_c Check (GioiTinh = N'Nam' or GioiTinh = N'Nữ')
+--2. 
+select*from nhanvien
+select * from SinhVien
+
 --tạo proceducer sinh mã tự động cho bảng TaiKhoan
 create proc sp_TaiKhoan_SinhMaTuDong
 as
@@ -136,7 +148,73 @@ end
 declare @return_Value int
 execute @return_Value = [dbo].[sp_TaiKhoan_SinhMaTuDong]
 select 'Return Value' = @return_Value
-go
+
+-- Sinh mã tự động bảng NhanVien
+create proc sp_NhanVien_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(MaNV) + 1 from NhanVien where MaNV like 'NV'
+	set @ma_next = 'NV' + right('0' + cast(@max as varchar(20)),20)
+
+	while (exists(select MaNV from NhanVien where MaNV = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='NV' + RIGHT('0' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+
+declare @return_Value int
+execute @return_Value = [dbo].[sp_NhanVien_SinhMaTuDong]
+select 'Return Value' = @return_Value
+
+--Sinh mã tự động sinh viên
+create proc sp_SinhVien_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(MaSV) + 1 from SinhVien where MaSV like 'SV'
+	set @ma_next = 'SV' + right('00' + cast(@max as varchar(20)),20)
+
+	while (exists(select MaSV from SinhVien where MaSV = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='SV' + RIGHT('00' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+
+declare @return_Value int
+execute @return_Value = [dbo].[sp_SinhVien_SinhMaTuDong]
+select 'Return Value' = @return_Value
+
+-- Sinh Mã tự động Mượn tả theo ngày
+CREATE FUNCTION auto_MuonTra()
+RETURNS VARCHAR(15)
+AS
+BEGIN
+	DECLARE @id VARCHAR(15)
+	IF (SELECT COUNT(MaMT) FROM MuonTra) = 0
+		SET @id = '0'
+	ELSE
+		SELECT @id = MAX(RIGHT(MaMT, 5)) FROM MuonTra
+		SELECT @id = CASE
+			WHEN @id = 99999 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV00001'
+			WHEN @id >= 0 and @id < 9 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV0000' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
+			WHEN @id >= 9 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV000' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
+			WHEN @id >= 99 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV00' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
+			WHEN @id >= 999 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV0' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
+			WHEN @id >= 9999 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
+		END
+	RETURN @id
+END
+
+select dbo.auto_MuonTra() from MuonTra
 
 
 select*from TaiKhoan

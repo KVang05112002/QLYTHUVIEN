@@ -292,6 +292,7 @@ namespace QL_THUVIET_2021
             this.txtIDTaiKhoan.Name = "txtIDTaiKhoan";
             this.txtIDTaiKhoan.Size = new System.Drawing.Size(299, 30);
             this.txtIDTaiKhoan.TabIndex = 9;
+            this.txtIDTaiKhoan.TextChanged += new System.EventHandler(this.txtIDTaiKhoan_TextChanged);
             // 
             // label5
             // 

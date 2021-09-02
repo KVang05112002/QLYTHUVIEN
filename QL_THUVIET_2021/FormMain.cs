@@ -190,5 +190,18 @@ namespace QL_THUVIET_2021
             tabMain.Tabs.Add(newTabPage);
             tabMain.SelectedTab = newTabPage;
         }
+
+        private void btnQLNhanVien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserQLYNhanVien usernhanvien = new UserQLYNhanVien();
+                AddNewTab("QL Nhân Viên", usernhanvien);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
