@@ -289,3 +289,12 @@ begin
  select*from NhanVien
 go
 
+--Tác giả 
+--lấy tác giả
+create proc [dbo].[SP_LayDSTG]
+as
+begin
+    select * from TacGia
+end
+go
+
