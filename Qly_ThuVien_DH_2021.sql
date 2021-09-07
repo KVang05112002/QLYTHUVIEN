@@ -7,14 +7,11 @@ go
 create table TaiKhoan
 (
 	ID varchar(10) primary key,
-	Masv varchar(20),
 	TenTK nvarchar(50),
 	MatKhau varchar(50),
 	Quyen nvarchar(50)
 )
-alter table TaiKhoan
-drop column Masv
-select*from TaiKhoan
+
 create table TacGia
 (
 	MaTG varchar(20) primary key,
@@ -59,9 +56,8 @@ create table NhanVien(
 	DiaChi nvarchar(150),
 	NgaySinh date,
 	SoDT nvarchar(15),
-	Hinhanh varbinary (max)
 )
-
+select*from NhanVien
 create table TheThuVien
 (
 	SoThe varchar(20) primary key,
@@ -80,7 +76,6 @@ create table SinhVien
 	NgaySinh date,
 	DiaChi nvarchar(150),
 	SoDT varchar(30),
-	Hinhanh varbinary (Max),
 	SoThe varchar(20)
 	foreign key (SoThe) references TheThuVien(SoThe)
 )
@@ -116,6 +111,10 @@ insert into TaiKhoan values ('TK01', '', N'admin', '123456789', 'Admin')
 insert into TaiKhoan values ('TK02', '', N'NhanVien', '123456789', N'Nhân Viên')
 select * from TaiKhoan
 
+insert into NhanVien values ('NV001','JinJin',N'Nam',N'Lâm Đồng','11/05/2002','0797909465') 
+select * from NhanVien
+go
+
 --ràng buộc 
 --1. giới tính chỉ có nam hoặc nữ
 alter table NhanVien
@@ -126,6 +125,7 @@ add Constraint SinhVien_GioiTinh_c Check (GioiTinh = N'Nam' or GioiTinh = N'Nữ
 --2. 
 select*from nhanvien
 select * from SinhVien
+go
 
 --tạo proceducer sinh mã tự động cho bảng TaiKhoan
 create proc sp_TaiKhoan_SinhMaTuDong
@@ -148,28 +148,7 @@ end
 declare @return_Value int
 execute @return_Value = [dbo].[sp_TaiKhoan_SinhMaTuDong]
 select 'Return Value' = @return_Value
-
--- Sinh mã tự động bảng NhanVien
-create proc sp_NhanVien_SinhMaTuDong
-as
-begin
-	declare @ma_next varchar(20)
-	declare @max int 
-
-	select @max=Count(MaNV) + 1 from NhanVien where MaNV like 'NV'
-	set @ma_next = 'NV' + right('0' + cast(@max as varchar(20)),20)
-
-	while (exists(select MaNV from NhanVien where MaNV = @ma_next))
-		begin
-			set @max = @max + 1
-			set @ma_next='NV' + RIGHT('0' + cast(@max as varchar(20)),20)
-		end
-		select @ma_next
-end
-
-declare @return_Value int
-execute @return_Value = [dbo].[sp_NhanVien_SinhMaTuDong]
-select 'Return Value' = @return_Value
+go
 
 --Sinh mã tự động sinh viên
 create proc sp_SinhVien_SinhMaTuDong
@@ -192,6 +171,25 @@ end
 declare @return_Value int
 execute @return_Value = [dbo].[sp_SinhVien_SinhMaTuDong]
 select 'Return Value' = @return_Value
+go
+
+--Sinh Mã tự động Sách
+create proc sp_Sach_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int
+	select @max = Count(MaSach) + 1 from Sach where MaSach like 'Sach'
+	set @ma_next = 'Sach' + RIGHT('00' + cast(@max as varchar(20)),20)
+	while (exists (select MaSach from Sach where MaSach = @ma_next))
+		begin
+			set @max = @max +1
+			set @ma_next = 'Sach' + right('00' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+execute dbo.sp_Sach_SinhMaTuDong
+go
 
 -- Sinh Mã tự động Mượn tả theo ngày
 CREATE FUNCTION auto_MuonTra()
@@ -217,4 +215,77 @@ END
 select dbo.auto_MuonTra() from MuonTra
 
 
-select*from TaiKhoan
+
+select*from Sach
+go
+
+--thủ tục select all dữ liệu của bảng NhanVien
+create proc sp_SelectAll_NhanVien
+as
+begin
+	Select * from NhanVien
+end
+
+-- Sinh mã tự động bảng NhanVien
+create proc sp_NhanVien_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(MaNV) + 1 from NhanVien where MaNV like 'NV'
+	set @ma_next = 'NV' + right('00' + cast(@max as varchar(20)),20)
+
+	while (exists(select MaNV from NhanVien where MaNV = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='NV' + RIGHT('00' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+
+declare @return_Value int
+execute @return_Value = [dbo].[sp_NhanVien_SinhMaTuDong]
+select 'Return Value' = @return_Value
+
+
+-- Thủ tục Insert into dữ liệu vào bảng Nhân Viên
+create procedure sp_Insert_NhanVien
+(
+	@MaNV varchar(20),
+	@HoTen nvarchar(150),
+	@GioiTinh nvarchar(10),
+	@DiaChi nvarchar(150),
+	@NgaySinh date,
+	@SoDT nvarchar(15)
+)
+as
+begin
+	Insert into NhanVien values (@MaNV,@HoTen,@GioiTinh,@DiaChi,@NgaySinh,@SoDT)
+end
+
+--Thủ tục update dữ liệu vào bảng Nhân Viên.
+create procedure sp_Update_NhanVien
+(
+	@MaNV varchar(20),
+	@HoTen nvarchar(150),
+	@GioiTinh nvarchar(10),
+	@DiaChi nvarchar(150),
+	@NgaySinh date,
+	@SoDT nvarchar(15)
+)
+as
+begin
+	UPDATE [dbo].[NhanVien]
+   SET
+       [HoTen] = @HoTen,
+       [GioiTinh] = @GioiTinh,
+       [DiaChi] = @DiaChi,
+       [NgaySinh] = @NgaySinh,
+       [SoDT] = @SoDT
+ WHERE [MaNV] = @MaNV
+ end
+
+ select*from NhanVien
+go
+

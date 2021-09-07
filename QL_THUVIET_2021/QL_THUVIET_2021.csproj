@@ -70,6 +70,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_NhanVien.Designer.cs">
+      <DependentUpon>Add_NhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCaoNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <Compile Include="UserTheThuVien.Designer.cs">
       <DependentUpon>UserTheThuVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Add_NhanVien.resx">
+      <DependentUpon>Add_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoNguoiDung.resx">
       <DependentUpon>BaoCaoNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
