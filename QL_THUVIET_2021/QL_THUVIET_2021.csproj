@@ -115,17 +115,47 @@
       <DependentUpon>QLY_ThuVien_DHDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserNhaXB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserNhaXB.Designer.cs">
+      <DependentUpon>UserNhaXB.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserQLYNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserQLYNhanVien.Designer.cs">
       <DependentUpon>UserQLYNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserSinhVien.Designer.cs">
+      <DependentUpon>UserSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserTacGia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserTacGia.Designer.cs">
+      <DependentUpon>UserTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserTheLoai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserTheLoai.Designer.cs">
+      <DependentUpon>UserTheLoai.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserTheThuVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserTheThuVien.Designer.cs">
       <DependentUpon>UserTheThuVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserTheTV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserTheTV.Designer.cs">
+      <DependentUpon>UserTheTV.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Add_NhanVien.resx">
       <DependentUpon>Add_NhanVien.cs</DependentUpon>
@@ -155,11 +185,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserNhaXB.resx">
+      <DependentUpon>UserNhaXB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserQLYNhanVien.resx">
       <DependentUpon>UserQLYNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserTacGia.resx">
+      <DependentUpon>UserTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserTheLoai.resx">
+      <DependentUpon>UserTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserTheThuVien.resx">
       <DependentUpon>UserTheThuVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserTheTV.resx">
+      <DependentUpon>UserTheTV.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -203,5 +203,44 @@ namespace QL_THUVIET_2021
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnTacGia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserTacGia usertacgia = new UserTacGia();
+                AddNewTab("QL Tác Giả", usertacgia);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void buttonItem3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserTheLoai usertheloai = new UserTheLoai();
+                AddNewTab("Thể Loại", usertheloai);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnNhaXuatBan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserNhaXB usernhaxb = new UserNhaXB();
+                AddNewTab("Nhà XB", usernhaxb);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
