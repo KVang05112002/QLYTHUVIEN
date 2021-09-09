@@ -34,24 +34,24 @@ namespace QL_THUVIET_2021
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
+            this.cboMaSV = new System.Windows.Forms.ComboBox();
+            this.cboMaNV = new System.Windows.Forms.ComboBox();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.txtSoThe = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnXuat = new DevComponents.DotNetBar.ButtonX();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.dgvTheThuVien = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtSoThe = new System.Windows.Forms.TextBox();
-            this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.cboMaNV = new System.Windows.Forms.ComboBox();
-            this.cboMaSV = new System.Windows.Forms.ComboBox();
-            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -115,6 +115,119 @@ namespace QL_THUVIET_2021
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
+            // 
+            // dtpNgayKT
+            // 
+            this.dtpNgayKT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayKT.Location = new System.Drawing.Point(694, 92);
+            this.dtpNgayKT.Name = "dtpNgayKT";
+            this.dtpNgayKT.Size = new System.Drawing.Size(328, 27);
+            this.dtpNgayKT.TabIndex = 4;
+            // 
+            // dtpNgayBD
+            // 
+            this.dtpNgayBD.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayBD.Location = new System.Drawing.Point(694, 37);
+            this.dtpNgayBD.Name = "dtpNgayBD";
+            this.dtpNgayBD.Size = new System.Drawing.Size(328, 27);
+            this.dtpNgayBD.TabIndex = 3;
+            // 
+            // cboMaSV
+            // 
+            this.cboMaSV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboMaSV.FormattingEnabled = true;
+            this.cboMaSV.Location = new System.Drawing.Point(161, 143);
+            this.cboMaSV.Name = "cboMaSV";
+            this.cboMaSV.Size = new System.Drawing.Size(361, 28);
+            this.cboMaSV.TabIndex = 2;
+            // 
+            // cboMaNV
+            // 
+            this.cboMaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboMaNV.FormattingEnabled = true;
+            this.cboMaNV.Location = new System.Drawing.Point(161, 91);
+            this.cboMaNV.Name = "cboMaNV";
+            this.cboMaNV.Size = new System.Drawing.Size(361, 28);
+            this.cboMaNV.TabIndex = 2;
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtGhiChu.Location = new System.Drawing.Point(694, 144);
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(328, 59);
+            this.txtGhiChu.TabIndex = 1;
+            // 
+            // txtSoThe
+            // 
+            this.txtSoThe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSoThe.Location = new System.Drawing.Point(161, 37);
+            this.txtSoThe.Name = "txtSoThe";
+            this.txtSoThe.Size = new System.Drawing.Size(361, 27);
+            this.txtSoThe.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(547, 151);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Ghi Chú:";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(547, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Ngày Hết Hạn:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 151);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Mã Sinh Viên";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(547, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Ngày Bắt Đầu:";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Mã Nhân Viên:";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Số Thẻ:";
             // 
             // btnXuat
             // 
@@ -221,119 +334,7 @@ namespace QL_THUVIET_2021
             this.dgvTheThuVien.RowTemplate.Height = 24;
             this.dgvTheThuVien.Size = new System.Drawing.Size(1028, 149);
             this.dgvTheThuVien.TabIndex = 32;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Số Thẻ:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Mã Nhân Viên:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 151);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Mã Sinh Viên";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(547, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Ngày Bắt Đầu:";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(547, 97);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Ngày Hết Hạn:";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(547, 151);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Ghi Chú:";
-            // 
-            // txtSoThe
-            // 
-            this.txtSoThe.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSoThe.Location = new System.Drawing.Point(161, 37);
-            this.txtSoThe.Name = "txtSoThe";
-            this.txtSoThe.Size = new System.Drawing.Size(361, 27);
-            this.txtSoThe.TabIndex = 1;
-            // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtGhiChu.Location = new System.Drawing.Point(694, 144);
-            this.txtGhiChu.Multiline = true;
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(328, 59);
-            this.txtGhiChu.TabIndex = 1;
-            // 
-            // cboMaNV
-            // 
-            this.cboMaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboMaNV.FormattingEnabled = true;
-            this.cboMaNV.Location = new System.Drawing.Point(161, 91);
-            this.cboMaNV.Name = "cboMaNV";
-            this.cboMaNV.Size = new System.Drawing.Size(361, 28);
-            this.cboMaNV.TabIndex = 2;
-            // 
-            // cboMaSV
-            // 
-            this.cboMaSV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboMaSV.FormattingEnabled = true;
-            this.cboMaSV.Location = new System.Drawing.Point(161, 143);
-            this.cboMaSV.Name = "cboMaSV";
-            this.cboMaSV.Size = new System.Drawing.Size(361, 28);
-            this.cboMaSV.TabIndex = 2;
-            // 
-            // dtpNgayBD
-            // 
-            this.dtpNgayBD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBD.Location = new System.Drawing.Point(694, 37);
-            this.dtpNgayBD.Name = "dtpNgayBD";
-            this.dtpNgayBD.Size = new System.Drawing.Size(328, 27);
-            this.dtpNgayBD.TabIndex = 3;
-            // 
-            // dtpNgayKT
-            // 
-            this.dtpNgayKT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayKT.Location = new System.Drawing.Point(694, 92);
-            this.dtpNgayKT.Name = "dtpNgayKT";
-            this.dtpNgayKT.Size = new System.Drawing.Size(328, 27);
-            this.dtpNgayKT.TabIndex = 4;
+            this.dgvTheThuVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTheThuVien_CellContentClick);
             // 
             // label8
             // 
@@ -364,9 +365,10 @@ namespace QL_THUVIET_2021
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserTheThuVien";
             this.Size = new System.Drawing.Size(1034, 551);
+            this.Load += new System.EventHandler(this.UserTheThuVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
