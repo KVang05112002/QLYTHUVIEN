@@ -121,6 +121,12 @@
     <Compile Include="UserNhaXB.Designer.cs">
       <DependentUpon>UserNhaXB.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserNoiQuy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserNoiQuy.Designer.cs">
+      <DependentUpon>UserNoiQuy.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserQLYNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,12 +156,6 @@
     </Compile>
     <Compile Include="UserTheThuVien.Designer.cs">
       <DependentUpon>UserTheThuVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserTheTV.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserTheTV.Designer.cs">
-      <DependentUpon>UserTheTV.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Add_NhanVien.resx">
       <DependentUpon>Add_NhanVien.cs</DependentUpon>
@@ -188,8 +188,14 @@
     <EmbeddedResource Include="UserNhaXB.resx">
       <DependentUpon>UserNhaXB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserNoiQuy.resx">
+      <DependentUpon>UserNoiQuy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserQLYNhanVien.resx">
       <DependentUpon>UserQLYNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSinhVien.resx">
+      <DependentUpon>UserSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserTacGia.resx">
       <DependentUpon>UserTacGia.cs</DependentUpon>
@@ -199,9 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserTheThuVien.resx">
       <DependentUpon>UserTheThuVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserTheTV.resx">
-      <DependentUpon>UserTheTV.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -241,6 +244,7 @@
     <None Include="Resources\tải xuống %284%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tải xuống %281%29.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

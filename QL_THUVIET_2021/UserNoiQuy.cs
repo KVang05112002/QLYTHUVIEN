@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QL_THUVIET_2021
 {
-    public partial class UserTheTV : UserControl
+    public partial class UserNoiQuy : UserControl
     {
-        public UserTheTV()
+        public UserNoiQuy()
         {
             InitializeComponent();
+        }
+
+        private void UserNoiQuy_Load(object sender, EventArgs e)
+        {
+            txtnoiquy.ReadOnly = true;
         }
     }
 }

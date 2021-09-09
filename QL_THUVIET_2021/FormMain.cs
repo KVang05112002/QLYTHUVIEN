@@ -242,5 +242,44 @@ namespace QL_THUVIET_2021
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnQLSinhVien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserSinhVien usersinhvien = new UserSinhVien();
+                AddNewTab("QL Sinh Viên", usersinhvien);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnNoiQuy_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserNoiQuy usernoiquy = new UserNoiQuy();
+                AddNewTab("Nội quy", usernoiquy);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnTheThuVien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserTheThuVien userthethuvien = new UserTheThuVien();
+                AddNewTab("Nội quy", userthethuvien);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

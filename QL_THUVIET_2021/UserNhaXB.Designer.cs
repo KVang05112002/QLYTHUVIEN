@@ -30,21 +30,21 @@ namespace QL_THUVIET_2021
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserNhaXB));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDaiDien = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTenNXB = new System.Windows.Forms.TextBox();
             this.txtMaNXB = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDaiDien = new System.Windows.Forms.TextBox();
             this.btnXuat = new DevComponents.DotNetBar.ButtonX();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
@@ -63,21 +63,10 @@ namespace QL_THUVIET_2021
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1018, 97);
             this.panel1.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 105);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1018, 211);
-            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
@@ -92,6 +81,17 @@ namespace QL_THUVIET_2021
             this.label1.Size = new System.Drawing.Size(388, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhà Xuất Bản Sách";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 105);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1018, 211);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -117,6 +117,15 @@ namespace QL_THUVIET_2021
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
             // 
+            // txtDaiDien
+            // 
+            this.txtDaiDien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDaiDien.Location = new System.Drawing.Point(579, 100);
+            this.txtDaiDien.Multiline = true;
+            this.txtDaiDien.Name = "txtDaiDien";
+            this.txtDaiDien.Size = new System.Drawing.Size(381, 85);
+            this.txtDaiDien.TabIndex = 1;
+            // 
             // txtEmail
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -125,6 +134,14 @@ namespace QL_THUVIET_2021
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(381, 29);
             this.txtEmail.TabIndex = 1;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDiaChi.Location = new System.Drawing.Point(156, 159);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(296, 26);
+            this.txtDiaChi.TabIndex = 1;
             // 
             // txtTenNXB
             // 
@@ -142,6 +159,17 @@ namespace QL_THUVIET_2021
             this.txtMaNXB.Size = new System.Drawing.Size(296, 26);
             this.txtMaNXB.TabIndex = 1;
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(478, 103);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Đại Diện:";
+            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -152,6 +180,17 @@ namespace QL_THUVIET_2021
             this.label4.Size = new System.Drawing.Size(62, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Email:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 165);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Địa Chỉ:";
             // 
             // label3
             // 
@@ -174,45 +213,6 @@ namespace QL_THUVIET_2021
             this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Nhà XB:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 165);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Địa Chỉ:";
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDiaChi.Location = new System.Drawing.Point(156, 159);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(296, 26);
-            this.txtDiaChi.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(478, 103);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Đại Diện:";
-            // 
-            // txtDaiDien
-            // 
-            this.txtDaiDien.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDaiDien.Location = new System.Drawing.Point(579, 100);
-            this.txtDaiDien.Multiline = true;
-            this.txtDaiDien.Name = "txtDaiDien";
-            this.txtDaiDien.Size = new System.Drawing.Size(381, 85);
-            this.txtDaiDien.TabIndex = 1;
             // 
             // btnXuat
             // 
@@ -267,6 +267,7 @@ namespace QL_THUVIET_2021
             this.btnSua.TabIndex = 28;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -285,6 +286,7 @@ namespace QL_THUVIET_2021
             this.btnXoa.TabIndex = 27;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -303,20 +305,21 @@ namespace QL_THUVIET_2021
             this.btnThem.TabIndex = 26;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dtgXNXB
             // 
             this.dtgXNXB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtgXNXB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgXNXB.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgXNXB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgXNXB.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgXNXB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgXNXB.Location = new System.Drawing.Point(0, 401);
             this.dtgXNXB.Name = "dtgXNXB";
             this.dtgXNXB.RowHeadersWidth = 51;
@@ -339,9 +342,10 @@ namespace QL_THUVIET_2021
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserNhaXB";
             this.Size = new System.Drawing.Size(1018, 597);
+            this.Load += new System.EventHandler(this.UserNhaXB_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

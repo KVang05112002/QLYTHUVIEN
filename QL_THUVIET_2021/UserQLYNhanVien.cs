@@ -189,7 +189,7 @@ namespace QL_THUVIET_2021
             string sql;
             if(tbNhanVien.Rows.Count == 0)
             {
-                MessageBox.Show("Không có fuwx liệu cần xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không có dữ liệu cần xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }    
             if(txtMaNV.Text.Trim().Length == 0)

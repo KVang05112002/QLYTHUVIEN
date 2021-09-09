@@ -64,8 +64,10 @@ create table TheThuVien
 	MaNV varchar(20),
 	NgayBanDau date,
 	NgayHetHan date,
-	GhiChu text
-	foreign key (MaNV) references NhanVien(MaNV)
+	GhiChu text,
+	MaSV varchar(20)
+	foreign key (MaNV) references NhanVien(MaNV),
+	constraint fk_Masv foreign key (MaSV) references SinhVien(MaSV)
 )
 
 create table SinhVien
@@ -75,9 +77,7 @@ create table SinhVien
 	GioiTinh nvarchar(5),
 	NgaySinh date,
 	DiaChi nvarchar(150),
-	SoDT varchar(30),
-	SoThe varchar(20)
-	foreign key (SoThe) references TheThuVien(SoThe)
+	SoDT varchar(30)
 )
 
 create table MuonTra
@@ -106,13 +106,17 @@ alter table CTMuonTra
 add foreign key (MaSach) references Sach(MaSach)
 alter table CTMuonTra
 add foreign key (MaMT) references MuonTra(MaMT)
-
+go
 insert into TaiKhoan values ('TK01', '', N'admin', '123456789', 'Admin')
 insert into TaiKhoan values ('TK02', '', N'NhanVien', '123456789', N'Nhân Viên')
 select * from TaiKhoan
 
 insert into NhanVien values ('NV001','JinJin',N'Nam',N'Lâm Đồng','11/05/2002','0797909465') 
 select * from NhanVien
+
+insert into SinhVien values ('SV001',N'K Vảng',N'Nam','11/05/2002',N'Lâm Đồng','0797909465')
+insert into SinhVien values ('SV002',N'Nguyễn Hữu Tuấn',N'Nam','11/09/2002',N'Ninh Thuận','0797909465')
+select*from SinhVien
 go
 
 --ràng buộc 
@@ -149,7 +153,7 @@ declare @return_Value int
 execute @return_Value = [dbo].[sp_TaiKhoan_SinhMaTuDong]
 select 'Return Value' = @return_Value
 go
-
+--SINH VIÊN
 --Sinh mã tự động sinh viên
 create proc sp_SinhVien_SinhMaTuDong
 as
@@ -171,6 +175,20 @@ end
 declare @return_Value int
 execute @return_Value = [dbo].[sp_SinhVien_SinhMaTuDong]
 select 'Return Value' = @return_Value
+
+create procedure sp_Insert_SinhVien
+(
+	@MaSV varchar(20),
+	@HoTenSV nvarchar(150),
+	@GioiTinh nvarchar(5),
+	@NgaySinh date,
+	@DiaChi nvarchar(150),
+	@SoDT varchar(30)
+)
+as
+begin
+	Insert into SinhVien values (@MaSV,@HoTenSV, @GioiTinh, @NgaySinh, @DiaChi, @SoDT )
+end
 go
 
 --Sinh Mã tự động Sách
@@ -297,4 +315,54 @@ begin
     select * from TacGia
 end
 go
-
+--Nhà Xuất Bản
+select * from NhaXuatBan
+/*lấy ds*/
+create proc [dbo].[SP_LayDSNXB]
+as
+begin
+    select * from NhaXuatBan
+end
+go
+/*Thêm*/
+create proc [dbo].[SP_ThemNXB]
+(
+@MaNXB varchar(20),
+@TenNXB nvarchar(150),
+@Diachi nvarchar(150),
+@Email nvarchar(50),
+@TTNDaiDien nvarchar(100)
+)
+as
+begin
+    insert into NhaXuatBan values (@MaNXB, @TenNXB, @Diachi, @Email,  @TTNDaiDien)
+end
+go
+/*Sửa*/
+create proc [dbo].[SP_SuaNXB]
+(
+@MaNXB varchar(20),
+@TenNXB nvarchar(150),
+@Diachi nvarchar(150),
+@Email nvarchar(50),
+@TTNDaiDien nvarchar(100)
+)
+as
+begin
+    update NhaXuatBan set
+    TenNXB = @Tennxb,
+	Diachi = @Diachi,
+    Email = @Email,
+    TTNDaiDien = @TTNDaiDien
+    where MaNXB = @MaNXB
+end
+go
+/*Xóa*/
+create proc [dbo].[SP_XoaNXB]
+@MaNXB varchar(20)
+as
+begin
+    delete NhaXuatBan where MaNXB = @MaNXB
+end
+select*from SinhVien
+select*from TheThuVien

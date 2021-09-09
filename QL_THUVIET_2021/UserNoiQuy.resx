@@ -117,4 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtnoiquy.Text" xml:space="preserve">
+    <value>Nội quy sử dụng thư viện
+ 1- Những quy định chung
+Điều 1. Toàn thể người học (học sinh, sinh viên, học viên cao học, nghiên cứu sinh) và cán bộ, giảng viên đều được sử dụng Thẻ đa năng do các đơn vị trong ĐHQGHN cấp có tích hợp chức năng thư viện hoặc Thẻ Thư viện do Trung tâm cấp để sử dụng các sản phẩm dịch vụ tại các phòng Phục vụ bạn đọc (PVBĐ) của Trung tâm Thông tin - Thư viện (Thư viện).
+Điều 2. Không cho người khác mượn thẻ và không sử dụng thẻ của người khác; Khi bị mất thẻ phải báo ngay cho phòng Phục vụ bạn đọc (nơi tiếp nhận các yêu cầu về thẻ theo quy định tại văn bản Quy trình cấp thẻ, gia hạn thẻ) để khóa tài khoản. Chủ thẻ hoàn toàn chịu trách nhiệm nếu để người khác sử dụng thẻ của mình mượn tài liệu.
+Điều 3. Xuất trình thẻ tại quầy thủ thư; Bạn đọc không có thẻ cần xuất trình Giấy giới thiệu của cơ quan và Chứng minh thư nhân dân.
+Điều 4. Trang phục nghiêm túc; giữ gìn vệ sinh, không mang theo đồ ăn uống; giữ trật tự và tuyệt đối không hút thuốc, không sử dụng các vật dễ cháy nổ trong khu vực thư viện.
+
+2- Quy định tại phòng đọc
+Điều 5. Bạn đọc để tư trang và tài liệu cá nhân tại tủ gửi đồ, tự bảo quản tiền và tài sản. Dùng xong tủ phải khóa tủ trước khi trả chìa khóa.
+Điều 6. Bạn đọc tìm hiểu các nội dung hướng dẫn sử dụng thư viện tại Website: http://lic.vnu.edu.vn; tự tra cứu và tìm tài liệu trên giá theo bảng chỉ dẫn; không tráo đổi vị trí tài liệu; được lấy không quá 03 cuốn sách hoặc 1 loại báo/tạp chí cho 1 lần sử dụng. Đọc xong, để sách vào nơi quy định, để báo/tạp chí lên giá.
+Điều 7. Tuyệt đối không mang tài liệu ra khỏi phòng đọc khi chưa được phép của cán bộ thư viện. Nếu có nhu cầu mượn tài liệu về, bạn đọc làm thủ tục mượn tại quầy thủ thư.
+Điều 8. Chỉ được sử dụng máy tính để khai thác thông tin phục vụ mục đích học tập và nghiên cứu khoa học; Bạn đọc muốn sử dụng USB để sao chép thông tin phải được sự đồng ý của cán bộ thư viện.
+Điều 9. Thực hiện nếp sống văn minh: tránh gây tiếng ồn, không ngồi gác chân lên ghế, xếp lại ghế trước khi rời chỗ ngồi, không viết, vẽ, gạch, xóa lên bàn ghế...
+
+3- Quy định tại phòng mượn
+Điều 10. Viết phiếu yêu cầu đầy đủ, rõ ràng (không viết bằng bút mực đỏ, bút chì). Kiểm tra tài liệu, báo cho cán bộ thư viện tình trạng tài liệu (bị rách, bẩn) trước khi ra khỏi phòng mượn.
+Điều 11. Chính sách mượn tài liệu:
+(Ghi chú: STK = Sách tham khảo; GT = Giáo trình; GT-NVCL = Giáo trình Nhiệm vụ chiến lược)
+• Học sinh chỉ được mượn tài liệu tại phòng Phục vụ bạn đọc gần cơ sở đào tạo, các đối tượng Bạn đọc khác được mượn tại tất cả các phòng Phục vụ bạn đọc (4 phòng).
+• Đối tượng Bạn đọc phải ký cược tiền khi mượn tài liệu bao gồm: Sinh viên tại chức, liên kết; Học viên cao học, Nghiên cứu sinh; Cán bộ, giảng viên hợp đồng cấp cơ sở.
+</value>
+  </data>
 </root>

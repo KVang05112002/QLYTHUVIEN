@@ -73,6 +73,16 @@ namespace QL_THUVIET_2021.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tải_xuống__1_ {
+            get {
+                object obj = ResourceManager.GetObject("tải xuống (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tải_xuống__4_ {
             get {
                 object obj = ResourceManager.GetObject("tải xuống (4)", resourceCulture);
