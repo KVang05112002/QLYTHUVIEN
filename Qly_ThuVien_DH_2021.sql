@@ -283,7 +283,7 @@ begin
 end
 
 --Thủ tục update dữ liệu vào bảng Nhân Viên.
-create procedure sp_Update_NhanVien
+alter procedure sp_Update_NhanVien
 (
 	@MaNV varchar(20),
 	@HoTen nvarchar(150),
@@ -292,9 +292,9 @@ create procedure sp_Update_NhanVien
 	@NgaySinh date,
 	@SoDT nvarchar(15)
 )
-as
+as 
 begin
-	UPDATE [dbo].[NhanVien]
+	UPDATE NhanVien
    SET
        [HoTen] = @HoTen,
        [GioiTinh] = @GioiTinh,
@@ -402,3 +402,4 @@ begin
 end
 select*from SinhVien
 select*from TheThuVien
+select * from nhanvien

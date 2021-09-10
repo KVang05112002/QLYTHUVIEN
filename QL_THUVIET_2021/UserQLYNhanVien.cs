@@ -158,7 +158,7 @@ namespace QL_THUVIET_2021
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            //string ngay = dtpNgaySinh.Value.ToString("yyyy-dd-MM");
+            string ngay = dtpNgaySinh.Value.ToString("dd/MM/yyyy");
             string sql;
             if (tbNhanVien.Rows.Count == 0)
             {
@@ -171,8 +171,8 @@ namespace QL_THUVIET_2021
                 txtMaNV.Focus();
                 return;
             }
-            
-            sql = "execute dbo.sp_Update_NhanVien  N'" + txtTenNV.Text.Trim().ToString() + "', N'"+cboGioiTinh.Text.Trim().ToString() + "', N'"+txtDiaChi.Text.Trim().ToString() + "', '" + Function.Ngaythangnam(dtpNgaySinh.Text) + "', N'" + txtSoDT.Text.Trim().ToString() + "'";
+
+            sql = "Update NhanVien set HoTen=N'" + txtTenNV.Text.Trim().ToString() + "',GioiTinh = N'" + cboGioiTinh.Text.Trim().ToString() + "', DiaChi = N'" + txtDiaChi.Text.Trim().ToString() + "',NgaySinh = '" + Function.Ngaythangnam(dtpNgaySinh.Text.Trim()) + "',SoDT= N'" + txtSoDT.Text.Trim().ToString() + "' where MaNV='" + txtMaNV.Text.Trim() + "'";
             Class.Function.RunSQL(sql);
             LoadDataGridView();
             ResetValues();

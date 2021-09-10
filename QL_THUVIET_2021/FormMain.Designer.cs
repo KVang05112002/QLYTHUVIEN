@@ -119,11 +119,11 @@ namespace QL_THUVIET_2021
             // 
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -574,6 +574,7 @@ namespace QL_THUVIET_2021
             // 
             this.ribbonPanel5.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel5.TabIndex = 5;
+            this.ribbonPanel5.Visible = false;
             // 
             // ribbonBar13
             // 
@@ -833,7 +834,6 @@ namespace QL_THUVIET_2021
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // ribbonBar4
             // 
@@ -961,6 +961,7 @@ namespace QL_THUVIET_2021
             // 
             // tabHeThong
             // 
+            this.tabHeThong.Checked = true;
             this.tabHeThong.Name = "tabHeThong";
             this.tabHeThong.Panel = this.ribbonPanel1;
             this.tabHeThong.Text = "Hệ Thống";
@@ -985,7 +986,6 @@ namespace QL_THUVIET_2021
             // 
             // tabTroGiup
             // 
-            this.tabTroGiup.Checked = true;
             this.tabTroGiup.Name = "tabTroGiup";
             this.tabTroGiup.Panel = this.ribbonPanel5;
             this.tabTroGiup.Text = "Trợ Giúp";
