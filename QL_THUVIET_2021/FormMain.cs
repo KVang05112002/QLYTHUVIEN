@@ -274,7 +274,7 @@ namespace QL_THUVIET_2021
             try
             {
                 UserTheThuVien userthethuvien = new UserTheThuVien();
-                AddNewTab("Nội quy", userthethuvien);
+                AddNewTab("Thẻ Thư Viện", userthethuvien);
             }
             catch (Exception ex)
             {

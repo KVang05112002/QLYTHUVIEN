@@ -64,7 +64,7 @@ create table TheThuVien
 	MaNV varchar(20),
 	NgayBanDau date,
 	NgayHetHan date,
-	GhiChu text,
+	GhiChu nvarchar(250),
 	MaSV varchar(20)
 	foreign key (MaNV) references NhanVien(MaNV),
 	constraint fk_Masv foreign key (MaSV) references SinhVien(MaSV)
@@ -306,6 +306,42 @@ begin
 
  select*from NhanVien
 go
+  
+--Thẻ Thư Viện
+--Sinh Mã Tự Động THẻ THư viện
+create proc sp_TheThuVien_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(SoThe) + 1 from TheThuVien where SoThe like 'TV'
+	set @ma_next = 'TV' + right('000' + cast(@max as varchar(20)),20)
+
+	while (exists(select SoThe from TheThuVien where SoThe = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='TV' + RIGHT('000' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+
+--Thêm dữ liệu
+alter procedure sp_Insert_TheThuVien
+(
+	@SoThe varchar(20),
+	@MaNV varchar(20),
+	@NgayBanDau date,
+	@NgayHetHan date,
+	@GhiChu nvarchar(250),
+	@MaSV varchar(20)
+)
+as
+begin
+	Insert into TheThuVien values (@SoThe,@MaNV,@NgayBanDau,@NgayHetHan,@GhiChu,@MaSV)
+end
+go
+
 
 --Tác giả 
 --lấy tác giả
