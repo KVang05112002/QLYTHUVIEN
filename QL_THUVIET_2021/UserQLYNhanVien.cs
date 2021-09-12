@@ -156,7 +156,7 @@ namespace QL_THUVIET_2021
             ResetValues();
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e) 
         {
             string ngay = dtpNgaySinh.Value.ToString("dd/MM/yyyy");
             string sql;
@@ -171,8 +171,8 @@ namespace QL_THUVIET_2021
                 txtMaNV.Focus();
                 return;
             }
-
-            sql = "Update NhanVien set HoTen=N'" + txtTenNV.Text.Trim().ToString() + "',GioiTinh = N'" + cboGioiTinh.Text.Trim().ToString() + "', DiaChi = N'" + txtDiaChi.Text.Trim().ToString() + "',NgaySinh = '" + Function.Ngaythangnam(dtpNgaySinh.Text.Trim()) + "',SoDT= N'" + txtSoDT.Text.Trim().ToString() + "' where MaNV='" + txtMaNV.Text.Trim() + "'";
+            sql = "Execute dbo.sp_Update_NhanVien @MaNV = '"+txtMaNV.Text.Trim()+"', @HoTen =  N'" + txtTenNV.Text.Trim() + "', @GioiTinh = N'" + cboGioiTinh.Text.Trim() + "',@DiaChi= N'" + txtDiaChi.Text.Trim() + "',@NgaySinh='" + Function.Ngaythangnam(dtpNgaySinh.Text.Trim()) + "',@SoDT =  N'" + txtSoDT.Text.Trim() + "'";
+            //sql = "Update NhanVien set HoTen=N'" + txtTenNV.Text.Trim().ToString() + "',GioiTinh = N'" + cboGioiTinh.Text.Trim().ToString() + "', DiaChi = N'" + txtDiaChi.Text.Trim().ToString() + "',NgaySinh = '" + Function.Ngaythangnam(dtpNgaySinh.Text.Trim()) + "',SoDT= N'" + txtSoDT.Text.Trim().ToString() + "' where MaNV='" + txtMaNV.Text.Trim() + "'";
             Class.Function.RunSQL(sql);
             LoadDataGridView();
             ResetValues();

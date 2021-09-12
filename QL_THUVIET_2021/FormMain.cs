@@ -281,5 +281,18 @@ namespace QL_THUVIET_2021
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnPhieuMuon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserPhieuMuon 
+                AddNewTab("Lập Phiếu Mượn", muon);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

@@ -87,25 +87,41 @@ create table MuonTra
 	MaNV varchar(20),
 	MaSV varchar(20),
 	NgayMuon date,
-	SoLuongMuon int
+	SoLuongMuon int,
+	TinhTrang nvarchar (100),
+	GhiChu nvarchar(200)
 	foreign key (SoThe) references TheThuVien(SoThe),
 	foreign key (MaNV) references NhanVien(MaNV),
 	foreign key (MaSV) references SinhVien(MaSV)
 )
 
-create table CTMuonTra
+create table PhieuMuon
 (
-	MaMT varchar(20),
+	MaPM varchar(20) primary key,
 	MaSach varchar(20),
-	GhiChu text,
-	DaTra nvarchar(20),
-	SoLuongTra int
-	constraint CTMuonTra_pk primary key (MaMT,MaSach)
+	SoThe varchar(20),
+	NgayMuon date,
+	MaSV varchar(20)
+	Constraint PRK_PhieuMuon_Sach foreign key (MaSach) references Sach(MaSach),
+	Constraint PRK_PhieuMuon_TheThuVien foreign key (SoThe) references TheThuVien(SoThe),
+	constraint PRK_PhieuMuon_SinhVien foreign key (MaSV) references SinhVien(MaSV)
 )
-alter table CTMuonTra
-add foreign key (MaSach) references Sach(MaSach)
-alter table CTMuonTra
-add foreign key (MaMT) references MuonTra(MaMT)
+
+create table PhieuNhacTra
+(
+	MaPNT varchar(20) primary key,
+	SoThe varchar(20),
+	MaSV varchar(20),
+	NgayLapPhat date,
+	DonGiaPhat float,
+	MaNV varchar(20),
+	MaSach varchar(20)
+	Constraint PRK_PhieuNhacTra_TheThuVien foreign key (SoThe) references TheThuVien(SoThe),
+	Constraint PRK_PhieuNhacTra_SinhVien foreign key (MaSV) references SinhVien(MaSV),
+	Constraint PRK_PhieuNhacTra_NhanVien foreign key (MaNV) references NhanVien(MaNV),
+	Constraint PRK_PhieuNhacTra_Sach foreign key (MaSach) references Sach(MaSach)
+)
+
 go
 insert into TaiKhoan values ('TK01', '', N'admin', '123456789', 'Admin')
 insert into TaiKhoan values ('TK02', '', N'NhanVien', '123456789', N'Nhân Viên')
@@ -296,12 +312,12 @@ as
 begin
 	UPDATE NhanVien
    SET
-       [HoTen] = @HoTen,
-       [GioiTinh] = @GioiTinh,
-       [DiaChi] = @DiaChi,
-       [NgaySinh] = @NgaySinh,
-       [SoDT] = @SoDT
- WHERE [MaNV] = @MaNV
+       HoTen = @HoTen,
+       GioiTinh = @GioiTinh,
+       DiaChi = @DiaChi,
+       NgaySinh = @NgaySinh,
+       SoDT = @SoDT
+	WHERE MaNV = @MaNV
  end
 
  select*from NhanVien
