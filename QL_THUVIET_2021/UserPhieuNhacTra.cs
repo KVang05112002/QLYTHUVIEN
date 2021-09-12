@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace QL_THUVIET_2021
 {
-    public partial class UserPhieuMuonTra : UserControl
+    public partial class UserPhieuNhacTra : UserControl
     {
-        public UserPhieuMuonTra()
+        public UserPhieuNhacTra()
         {
             InitializeComponent();
         }
 
-        private void UserPhieuMuonTra_Load(object sender, EventArgs e)
+        private void UserPhieuMuon_Load(object sender, EventArgs e)
         {
 
         }

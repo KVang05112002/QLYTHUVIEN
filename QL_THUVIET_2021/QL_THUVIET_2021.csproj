@@ -127,17 +127,17 @@
     <Compile Include="UserNoiQuy.Designer.cs">
       <DependentUpon>UserNoiQuy.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserPhieuMuon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserPhieuMuon.Designer.cs">
-      <DependentUpon>UserPhieuMuon.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserPhieuNhacTra.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserPhieuNhacTra.Designer.cs">
       <DependentUpon>UserPhieuNhacTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPhieuMuonSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserPhieuMuonSach.Designer.cs">
+      <DependentUpon>UserPhieuMuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="UserQLYNhanVien.cs">
       <SubType>UserControl</SubType>
@@ -203,11 +203,11 @@
     <EmbeddedResource Include="UserNoiQuy.resx">
       <DependentUpon>UserNoiQuy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserPhieuMuon.resx">
-      <DependentUpon>UserPhieuMuon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserPhieuNhacTra.resx">
       <DependentUpon>UserPhieuNhacTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPhieuMuonSach.resx">
+      <DependentUpon>UserPhieuMuonSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserQLYNhanVien.resx">
       <DependentUpon>UserQLYNhanVien.cs</DependentUpon>
@@ -265,6 +265,7 @@
     <None Include="Resources\tải xuống %281%29.jpg" />
     <None Include="Resources\thethuvien.png" />
     <None Include="Resources\sach.png" />
+    <None Include="Resources\load.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

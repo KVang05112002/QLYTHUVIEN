@@ -32,8 +32,8 @@ namespace QL_THUVIET_2021
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserTheLoai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTenTL = new System.Windows.Forms.TextBox();
             this.txtMaTL = new System.Windows.Forms.TextBox();
@@ -61,16 +61,6 @@ namespace QL_THUVIET_2021
             this.panel1.Size = new System.Drawing.Size(938, 84);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 84);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(938, 132);
-            this.panel2.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -84,6 +74,16 @@ namespace QL_THUVIET_2021
             this.label1.Size = new System.Drawing.Size(291, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "Thể Loại Sách";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 84);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(938, 132);
+            this.panel2.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -176,6 +176,7 @@ namespace QL_THUVIET_2021
             this.btnLuu.TabIndex = 29;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
@@ -194,6 +195,7 @@ namespace QL_THUVIET_2021
             this.btnSua.TabIndex = 28;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -212,6 +214,7 @@ namespace QL_THUVIET_2021
             this.btnXoa.TabIndex = 27;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -230,6 +233,7 @@ namespace QL_THUVIET_2021
             this.btnThem.TabIndex = 26;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dtgXTheLoai
             // 
@@ -250,6 +254,7 @@ namespace QL_THUVIET_2021
             this.dtgXTheLoai.RowTemplate.Height = 24;
             this.dtgXTheLoai.Size = new System.Drawing.Size(930, 167);
             this.dtgXTheLoai.TabIndex = 31;
+            this.dtgXTheLoai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgXTheLoai_CellContentClick);
             // 
             // UserTheLoai
             // 
@@ -269,6 +274,7 @@ namespace QL_THUVIET_2021
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserTheLoai";
             this.Size = new System.Drawing.Size(938, 497);
+            this.Load += new System.EventHandler(this.UserTheLoai_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -286,8 +286,21 @@ namespace QL_THUVIET_2021
         {
             try
             {
-                UserPhieuMuon 
-                AddNewTab("Lập Phiếu Mượn", muon);
+                UserPhieuMuonTra Muontra = new UserPhieuMuonTra();
+                AddNewTab("Lập Phiếu Mượn", Muontra);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnNhacTra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserPhieuNhacTra nhactra = new UserPhieuNhacTra();
+                AddNewTab("Phiếu Nhác Trả", nhactra);
             }
             catch (Exception ex)
             {

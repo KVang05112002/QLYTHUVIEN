@@ -133,6 +133,18 @@ select * from NhanVien
 insert into SinhVien values ('SV001',N'K Vảng',N'Nam','11/05/2002',N'Lâm Đồng','0797909465')
 insert into SinhVien values ('SV002',N'Nguyễn Hữu Tuấn',N'Nam','11/09/2002',N'Ninh Thuận','0797909465')
 select*from SinhVien
+
+select*from TacGia
+insert into TacGia values ('TG001',N'Xuân Quỳnh','')
+go
+select*from TheLoai
+insert into TheLoai values ('TL001',N'Thơ')
+go
+select*from NhaXuatBan
+insert into NhaXuatBan values ('NXB001',N'Kim Đồng',N'Lâm Đồng','kimdong@gmail.com',N'Giám Đốc Nguyễn Vĩnh Xuân')
+go
+insert into Sach values ('S001',N'Sóng','11/05/1992',30,N'Còn','TG001','TL001','NXB001')
+select*from Sach
 go
 
 --ràng buộc 
@@ -358,16 +370,23 @@ begin
 end
 go
 
-
---Tác giả 
---lấy tác giả
-create proc [dbo].[SP_LayDSTG]
+--Nhà Xuất Bản
+create proc sp_NXB_SinhMaTuDong
 as
 begin
-    select * from TacGia
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(MaNXB) + 1 from NhaXuatBan where MaNXB like 'NXB'
+	set @ma_next = 'NXB' + right('000' + cast(@max as varchar(20)),20)
+
+	while (exists(select MaNXB from NhaXuatBan where MaNXB = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='NXB' + RIGHT('000' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
 end
-go
---Nhà Xuất Bản
 select * from NhaXuatBan
 /*lấy ds*/
 create proc [dbo].[SP_LayDSNXB]
@@ -375,7 +394,6 @@ as
 begin
     select * from NhaXuatBan
 end
-go
 /*Thêm*/
 create proc [dbo].[SP_ThemNXB]
 (
@@ -389,7 +407,6 @@ as
 begin
     insert into NhaXuatBan values (@MaNXB, @TenNXB, @Diachi, @Email,  @TTNDaiDien)
 end
-go
 /*Sửa*/
 create proc [dbo].[SP_SuaNXB]
 (
@@ -408,13 +425,123 @@ begin
     TTNDaiDien = @TTNDaiDien
     where MaNXB = @MaNXB
 end
-go
 /*Xóa*/
 create proc [dbo].[SP_XoaNXB]
 @MaNXB varchar(20)
 as
 begin
     delete NhaXuatBan where MaNXB = @MaNXB
+end
+go
+--Phiếu Mượn
+--Sinh Mã Tự Động Phiêu Mượn
+alter proc sp_PhieuMuon_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(MaPM) + 1 from PhieuMuon where MaPM like 'PM'
+	set @ma_next = 'PM' + right('00' + cast(@max as varchar(20)),20)
+
+	while (exists(select MaPM from PhieuMuon where MaPM = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='PM' + RIGHT('00' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+--insert into phiếu mượn
+create proc sp_insertinto_PhieuMuon
+(
+	@MaPM varchar(20),
+	@MaSach varchar(20),
+	@SoThe varchar(20),
+	@NgayMuon date,
+	@MaSV varchar(20)
+)
+as
+begin
+	Insert into PhieuMuon values (@MaPM,@MaSach,@SoThe,@NgayMuon,@MaSV)
+end
+--update phiếu mượn
+create proc sp_Update_PhieuMuon
+(
+	@MaPM varchar(20),
+	@MaSach varchar(20),
+	@SoThe varchar(20),
+	@NgayMuon date,
+	@MaSV varchar(20)
+)
+as
+begin
+	update PhieuMuon 
+	set
+	MaSach = @MaSach,
+	SoThe = @SoThe,
+	NgayMuon = @NgayMuon,
+	MaSV = @MaSV
+	where MaPM = @MaPM
+end
+go
+--Thể Loại
+--Sinh mã tự động thể loại
+create proc sp_TheLoai_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(MaTL) + 1 from TheLoai where MaTL like 'TL'
+	set @ma_next = 'TL' + right('00' + cast(@max as varchar(20)),20)
+
+	while (exists(select MaTL from TheLoai where MaTL = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='TL' + RIGHT('00' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+
+--Insert into Thê loại
+create proc sp_insertinto_TheLoai
+(
+	@MaTL varchar(20),
+	@TenTL nvarchar(150)
+)
+as
+begin
+	insert into TheLoai Values (@MaTL, @TenTL)
+end
+go
+--Tác Giả
+--Sinh mã tự động
+create proc sp_TacGia_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(MaTG) + 1 from TacGia where MaTG like 'TG'
+	set @ma_next = 'TG' + right('00' + cast(@max as varchar(20)),20)
+
+	while (exists(select MaTG from TacGia where MaTG = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='TG' + RIGHT('00' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+--insert into Tác Giả
+create proc sp_insertinto_TacGia
+(
+	@MaTG varchar(20),
+	@TenTG nvarchar(150),
+	@GhiChu nvarchar(150)
+)
+as
+begin
+	insert into TacGia Values (@MaTG, @TenTG,@GhiChu)
 end
 select*from SinhVien
 select*from TheThuVien

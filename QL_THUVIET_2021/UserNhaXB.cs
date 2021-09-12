@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QL_THUVIET_2021.Class;
 
 namespace QL_THUVIET_2021
 {
@@ -17,193 +18,111 @@ namespace QL_THUVIET_2021
         {
             InitializeComponent();
         }
-        SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-BPN90P8;Initial Catalog=QLY_ThuVien_DH;Persist Security Info=True;User ID=sa;Password=05112002@VANG");
+        DataTable tbNXB;
         private void UserNhaXB_Load(object sender, EventArgs e)
         {
-            ketnoicsdl();
-            LayDSNXB();
+            LoadDataGridview();
         }
-        private void ketnoicsdl()
+        private  void LoadDataGridview()
         {
-            cnn.Open();
-            string sql = "select * from NhaXuatBan";  // lay het du lieu trong bang 
-            SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
-            com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
-            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
-            da.Fill(dt);  // đổ dữ liệu vào kho
-            cnn.Close();  // đóng kết nối
-            dtgXNXB.DataSource = dt; //đổ dữ liệu vào datagridview
+            string sql = "Select * from NhaXuatBan";
+            tbNXB = Class.Function.GetDataToTable(sql);
+            dtgXNXB.DataSource = tbNXB;
+            dtgXNXB.Columns[0].HeaderText = "Mã NXB";
+            dtgXNXB.Columns[0].Width = 150;
+            dtgXNXB.Columns[1].HeaderText = "Tên NXB";
+            dtgXNXB.Columns[1].Width = 150;
+            dtgXNXB.Columns[2].HeaderText = "Địa Chỉ";
+            dtgXNXB.Columns[2].Width = 150;
+            dtgXNXB.Columns[3].HeaderText = "Email";
+            dtgXNXB.Columns[3].Width = 150;
+            dtgXNXB.Columns[4].HeaderText = "Người đại diện";
+            dtgXNXB.Columns[4].Width = 150;
+            dtgXNXB.AllowUserToAddRows = false;
+            dtgXNXB.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
-        private void LayDSNXB()
+        private void ResetValue()
         {
-            SqlConnection con = new SqlConnection();
-            SqlDataAdapter da = new SqlDataAdapter();
-            DataTable dt = new DataTable();
-            //con.ConnectionString = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString;
-            try
-            {
-                con.Open();
-                da.SelectCommand = new SqlCommand();
-                da.SelectCommand.CommandText = "[dbo].[SP_LayDSNXB]";
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Connection = con;
-                da.Fill(dt);
-                dtgXNXB.DataSource = dt;
-                con.Close();
-                dtgXNXB.Columns[0].Width = 35;
-                dtgXNXB.Columns[0].HeaderText = "Mã NXB";
-                dtgXNXB.Columns[1].Width = 130;
-                dtgXNXB.Columns[1].HeaderText = "Tên NXB";
-                dtgXNXB.Columns[2].Width = 80;
-                dtgXNXB.Columns[2].HeaderText = "Địa Chỉ";
-                dtgXNXB.Columns[3].Width = 80;
-                dtgXNXB.Columns[3].HeaderText = "Email";
-                dtgXNXB.Columns[4].Width = 135;
-                dtgXNXB.Columns[4].HeaderText = "Thông tin người đại diện";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            txtMaNXB.Text = "";
+            txtTenNXB.Text = "";
+            txtDiaChi.Text = "";
+            txtEmail.Text = "";
+            txtDaiDien.Text = "";
         }
-        private bool KiemTraThongTinNXB()
-        {
-            if (txtMaNXB.Text == "")
-            {
-                MessageBox.Show("Vui lòng điền mã Nhà xuất bản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaNXB.Focus();
-                return false;
-            }
-            if (txtTenNXB.Text == "")
-            {
-                MessageBox.Show("Vui lòng điền tên nxb.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtTenNXB.Focus();
-                return false;
-            }
-            if (txtEmail.Text == "")
-            {
-                MessageBox.Show("Vui lòng điền Email của NXB.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtEmail.Focus();
-                return false;
-            }
-            if (txtDiaChi.Text == "")
-            {
-                MessageBox.Show("Vui lòng điền địa chỉ của NXB.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtDiaChi.Focus();
-                return false;
-            }
-            if (txtDaiDien.Text == "")
-            {
-                MessageBox.Show("Vui lòng điền thông tin người đại diện của NXB.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtDaiDien.Focus();
-                return false;
-            }
-            return true;
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTinNXB())
-            {
-                try
-                {
-                    SqlConnection conn = new SqlConnection();
-                    //conn.ConnectionString = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString;
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "[dbo].[SP_ThemNXB]";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaNXB", SqlDbType.NVarChar).Value = txtMaNXB.Text;
-                    cmd.Parameters.Add("@TenNXB", SqlDbType.NVarChar).Value = txtTenNXB.Text;
-                    cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = txtDiaChi.Text;
-                    cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = txtEmail.Text;
-                    cmd.Parameters.Add("@TTNDaiDien", SqlDbType.NVarChar).Value = txtDaiDien.Text;
-                    cmd.Connection = conn;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    LayDSNXB();
-                    MessageBox.Show("Thêm mới Nhà Xuất Bản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Reset();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            ResetValue();
+            string sql = "Excecute dbo.sp_NXB_SinhMaTuDong";
+            txtMaNXB.Text = Class.Function.GetFieldValues(sql);
+            LoadDataGridview();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (txtMaNXB.Text == "" || txtMaNXB.Text == "Thêm mới không cần ID")
-            {
-                MessageBox.Show("Vui lòng điền ID nxb cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaNXB.Focus();
-                txtMaNXB.SelectAll();
-            }
-            else if (KiemTraThongTinNXB())
-            {
-                try
-                {
-                    SqlConnection conn = new SqlConnection();
-                    // conn.ConnectionString = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString;
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "[dbo].[SP_SuaNXB]";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaXNB", SqlDbType.VarChar).Value = txtMaNXB.Text;
-                    cmd.Parameters.Add("@TenNXB", SqlDbType.NVarChar).Value = txtTenNXB.Text;
-                    cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = txtDiaChi.Text;
-                    cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = txtEmail.Text;
-                    cmd.Parameters.Add("@TTNDaiDien", SqlDbType.NVarChar).Value = txtDaiDien.Text;
-                    cmd.Connection = conn;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    LayDSNXB();
-                    MessageBox.Show("Sửa Nhà Xuất Bản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Reset();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+          
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (txtMaNXB.Text == "Thêm mới không cần ID" || txtMaNXB.Text == "")
+           
+        }
+
+        private void dtgXNXB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(tbNXB.Rows.Count == 0)
             {
-                MessageBox.Show("Vui lòng điền ID nxb cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không có dữ liệu", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (btnThem.Enabled == false)
+            {
+                MessageBox.Show("Đang ở chế độ thêm mới", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnThem.Focus();
+                return;
+            }
+            txtMaNXB.Text = dtgXNXB.CurrentRow.Cells["MaNXB"].Value.ToString();
+            txtTenNXB.Text = dtgXNXB.CurrentRow.Cells["TenNXB"].Value.ToString();
+            txtDiaChi.Text = dtgXNXB.CurrentRow.Cells["DiaChi"].Value.ToString();
+            txtEmail.Text = dtgXNXB.CurrentRow.Cells["Email"].Value.ToString();
+            txtDaiDien.Text = dtgXNXB.CurrentRow.Cells["TTNDaiDien"].Value.ToString();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if(txtMaNXB.Text.Length == 0)
+            {
+                MessageBox.Show("Bạn phải thêm mã nhà xuất bản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMaNXB.Focus();
+                return;
             }
-            else
+            if (txtTenNXB.Text.Length == 0)
             {
-                try
-                {
-                    SqlConnection conn = new SqlConnection();
-                    //conn.ConnectionString = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString;
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "[dbo].[SP_XoaNXB]";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@MaNXB", SqlDbType.Int).Value = Convert.ToInt32(txtMaNXB.Text);
-                    cmd.Parameters.Add("@TenNXB", SqlDbType.NVarChar).Value = Convert.ToInt32(txtTenNXB.Text);
-                    cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = Convert.ToInt32(txtDiaChi.Text);
-                    cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = Convert.ToInt32(txtEmail.Text);
-                    cmd.Parameters.Add("@TTNDaiDien", SqlDbType.NVarChar).Value = txtDaiDien.Text;
-                    cmd.Connection = conn;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    LayDSNXB();
-                    MessageBox.Show("Xóa Nhà Xuất Bản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Reset();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show("Bạn phải thêm tên nhà xuất bản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTenNXB.Focus();
+                return;
             }
+            if (txtDiaChi.Text.Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập địa chỉ nhà xuất bản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDiaChi.Focus();
+                return;
+            }
+            if (txtEmail.Text.Length == 0)
+            {
+                MessageBox.Show("Bạn phải địa chỉ email của nhà xuất bản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtEmail.Focus();
+                return;
+            }
+            sql = "Select MaNXB from NhaXuatBan where MaNXB= '" + txtMaNXB.Text.Trim() + "'";
+            if (Class.Function.KiemTraKhoaTrung(sql))
+            {
+                MessageBox.Show("Mã khóa này đã được sử dụng vui lòng chọn mã khóa khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sql = "Excute dbo.";
         }
     }
 }
