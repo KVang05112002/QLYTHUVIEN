@@ -67,5 +67,10 @@ namespace QL_THUVIET_2021
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

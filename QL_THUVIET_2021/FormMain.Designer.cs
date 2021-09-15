@@ -123,8 +123,8 @@ namespace QL_THUVIET_2021
             // 
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
@@ -192,6 +192,7 @@ namespace QL_THUVIET_2021
             // 
             this.ribbonPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel4.TabIndex = 4;
+            this.ribbonPanel4.Visible = false;
             // 
             // ribbonBar14
             // 
@@ -464,7 +465,6 @@ namespace QL_THUVIET_2021
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // ribbonBar4
             // 
@@ -1049,13 +1049,13 @@ namespace QL_THUVIET_2021
             // 
             // tabHeThong
             // 
+            this.tabHeThong.Checked = true;
             this.tabHeThong.Name = "tabHeThong";
             this.tabHeThong.Panel = this.ribbonPanel1;
             this.tabHeThong.Text = "Hệ Thống";
             // 
             // tabDanhMuc
             // 
-            this.tabDanhMuc.Checked = true;
             this.tabDanhMuc.Name = "tabDanhMuc";
             this.tabDanhMuc.Panel = this.ribbonPanel4;
             this.tabDanhMuc.Text = "Danh Mục";
@@ -1105,7 +1105,7 @@ namespace QL_THUVIET_2021
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.tabMain.SelectedTabIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(1051, 328);
+            this.tabMain.Size = new System.Drawing.Size(1051, 324);
             this.tabMain.TabIndex = 1;
             this.tabMain.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabMain.Tabs.Add(this.tabGioiThieu);
@@ -1160,7 +1160,7 @@ namespace QL_THUVIET_2021
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 31);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(1051, 297);
+            this.tabControlPanel1.Size = new System.Drawing.Size(1051, 293);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1177,7 +1177,7 @@ namespace QL_THUVIET_2021
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Calligraphy", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(-45, 241);
+            this.label1.Location = new System.Drawing.Point(-45, 237);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1130, 48);
             this.label1.TabIndex = 1;
@@ -1191,7 +1191,7 @@ namespace QL_THUVIET_2021
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1049, 295);
+            this.pictureBox1.Size = new System.Drawing.Size(1049, 291);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -1261,7 +1261,7 @@ namespace QL_THUVIET_2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 551);
+            this.ClientSize = new System.Drawing.Size(1061, 547);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
