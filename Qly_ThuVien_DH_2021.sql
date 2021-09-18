@@ -145,6 +145,7 @@ insert into NhaXuatBan values ('NXB001',N'Kim Đồng',N'Lâm Đồng','kimdong@
 go
 insert into Sach values ('S001',N'Sóng','11/05/1992',30,N'Còn','TG001','TL001','NXB001')
 select*from Sach
+delete TacGia where MaTG = 'TG001'
 go
 
 --ràng buộc 
@@ -425,13 +426,7 @@ begin
     TTNDaiDien = @TTNDaiDien
     where MaNXB = @MaNXB
 end
-/*Xóa*/
-create proc [dbo].[SP_XoaNXB]
-@MaNXB varchar(20)
-as
-begin
-    delete NhaXuatBan where MaNXB = @MaNXB
-end
+
 go
 --Phiếu Mượn
 --Sinh Mã Tự Động Phiêu Mượn
@@ -543,6 +538,60 @@ as
 begin
 	insert into TacGia Values (@MaTG, @TenTG,@GhiChu)
 end
-select*from SinhVien
-select*from TheThuVien
-select * from nhanvien
+go
+--Phieu Nhac tra
+--sinh mã tụ động phieu nhắc trả
+create proc sp_PhieuNhacTra_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(MaPNT) + 1 from PhieuNhacTra where MaPNT like 'PNT'
+	set @ma_next = 'PNT' + right('00' + cast(@max as varchar(20)),20)
+
+	while (exists(select MaPNT from PhieuNhacTra where MaPNT = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='PNT' + RIGHT('00' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end
+--insert into dữ liệu cho bảng phieu nhác trả
+create proc sp_Insert_PhieuNhacTra
+(
+	@MaPNT varchar(20),
+	@SoThe varchar(20),
+	@MaSV varchar(20),
+	@NgayLapPhat date,
+	@DonGiaPhat float,
+	@MaNV varchar(20),
+	@MaSach varchar(20)
+)
+as
+begin
+	insert into PhieuNhacTra values(@MaPNT,@SoThe,@MaSV,@NgayLapPhat,@DonGiaPhat,@MaNV,@MaSach)
+end
+--Update dữ liệu phiếu nhắc trả
+create proc sp_Update_PhieuNhacTra
+(
+	@MaPNT varchar(20),
+	@SoThe varchar(20),
+	@MaSV varchar(20),
+	@NgayLapPhat date,
+	@DonGiaPhat float,
+	@MaNV varchar(20),
+	@MaSach varchar(20)
+)
+as
+begin
+	Update PhieuNhacTra
+	set
+	SoThe = @SoThe,
+	MaSV = @MaSV,
+	NgayLapPhat = @NgayLapPhat,
+	DonGiaPhat = @DonGiaPhat,
+	MaNV = @MaNV,
+	MaSach = @MaSach
+	where MaPNT = @MaPNT
+end

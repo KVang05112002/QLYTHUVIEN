@@ -29,25 +29,27 @@ namespace QL_THUVIET_2021
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPhieuNhacTra));
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.cboTImKiem = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvNhacTra = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGiaPhat = new System.Windows.Forms.TextBox();
             this.btnXuat = new DevComponents.DotNetBar.ButtonX();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
+            this.cboMaSach = new System.Windows.Forms.ComboBox();
+            this.cboMaNV = new System.Windows.Forms.ComboBox();
+            this.cboMaSV = new System.Windows.Forms.ComboBox();
+            this.cboSoThe = new System.Windows.Forms.ComboBox();
+            this.txtMaPNT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,7 +59,7 @@ namespace QL_THUVIET_2021
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhacTra)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +74,7 @@ namespace QL_THUVIET_2021
             this.btnTimKiem.TabIndex = 20;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // cboTImKiem
             // 
@@ -100,9 +103,9 @@ namespace QL_THUVIET_2021
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvNhacTra);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Yellow;
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(541, 126);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(651, 450);
@@ -110,33 +113,51 @@ namespace QL_THUVIET_2021
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bảng Phiếu Nhắc Trả Sách";
             // 
-            // dataGridView1
+            // dgvNhacTra
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(639, 418);
-            this.dataGridView1.TabIndex = 0;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNhacTra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvNhacTra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNhacTra.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvNhacTra.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgvNhacTra.Location = new System.Drawing.Point(6, 26);
+            this.dgvNhacTra.Name = "dgvNhacTra";
+            this.dgvNhacTra.RowHeadersWidth = 51;
+            this.dgvNhacTra.RowTemplate.Height = 24;
+            this.dgvNhacTra.Size = new System.Drawing.Size(639, 418);
+            this.dgvNhacTra.TabIndex = 0;
+            this.dgvNhacTra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhacTra_CellContentClick_1);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtGiaPhat);
             this.groupBox1.Controls.Add(this.btnXuat);
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.dtpNgayLap);
+            this.groupBox1.Controls.Add(this.cboMaSach);
+            this.groupBox1.Controls.Add(this.cboMaNV);
+            this.groupBox1.Controls.Add(this.cboMaSV);
+            this.groupBox1.Controls.Add(this.cboSoThe);
+            this.groupBox1.Controls.Add(this.txtMaPNT);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -152,6 +173,14 @@ namespace QL_THUVIET_2021
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiêu nhắc trả sách";
+            // 
+            // txtGiaPhat
+            // 
+            this.txtGiaPhat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtGiaPhat.Location = new System.Drawing.Point(158, 316);
+            this.txtGiaPhat.Name = "txtGiaPhat";
+            this.txtGiaPhat.Size = new System.Drawing.Size(305, 27);
+            this.txtGiaPhat.TabIndex = 31;
             // 
             // btnXuat
             // 
@@ -188,6 +217,7 @@ namespace QL_THUVIET_2021
             this.btnLuu.TabIndex = 29;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
@@ -206,6 +236,7 @@ namespace QL_THUVIET_2021
             this.btnSua.TabIndex = 28;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -224,6 +255,7 @@ namespace QL_THUVIET_2021
             this.btnXoa.TabIndex = 27;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -242,68 +274,60 @@ namespace QL_THUVIET_2021
             this.btnThem.TabIndex = 26;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // dateTimePicker2
+            // dtpNgayLap
             // 
-            this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(158, 319);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(305, 27);
-            this.dateTimePicker2.TabIndex = 4;
+            this.dtpNgayLap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayLap.Location = new System.Drawing.Point(158, 273);
+            this.dtpNgayLap.Name = "dtpNgayLap";
+            this.dtpNgayLap.Size = new System.Drawing.Size(305, 27);
+            this.dtpNgayLap.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // cboMaSach
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(158, 273);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(305, 27);
-            this.dateTimePicker1.TabIndex = 3;
+            this.cboMaSach.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboMaSach.FormattingEnabled = true;
+            this.cboMaSach.Location = new System.Drawing.Point(158, 226);
+            this.cboMaSach.Name = "cboMaSach";
+            this.cboMaSach.Size = new System.Drawing.Size(305, 28);
+            this.cboMaSach.TabIndex = 2;
             // 
-            // comboBox4
+            // cboMaNV
             // 
-            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(158, 226);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(305, 28);
-            this.comboBox4.TabIndex = 2;
+            this.cboMaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboMaNV.FormattingEnabled = true;
+            this.cboMaNV.Location = new System.Drawing.Point(158, 179);
+            this.cboMaNV.Name = "cboMaNV";
+            this.cboMaNV.Size = new System.Drawing.Size(305, 28);
+            this.cboMaNV.TabIndex = 2;
             // 
-            // comboBox3
+            // cboMaSV
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(158, 179);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(305, 28);
-            this.comboBox3.TabIndex = 2;
+            this.cboMaSV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboMaSV.FormattingEnabled = true;
+            this.cboMaSV.Location = new System.Drawing.Point(158, 133);
+            this.cboMaSV.Name = "cboMaSV";
+            this.cboMaSV.Size = new System.Drawing.Size(305, 28);
+            this.cboMaSV.TabIndex = 2;
             // 
-            // comboBox2
+            // cboSoThe
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(158, 133);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(305, 28);
-            this.comboBox2.TabIndex = 2;
+            this.cboSoThe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboSoThe.FormattingEnabled = true;
+            this.cboSoThe.Location = new System.Drawing.Point(158, 85);
+            this.cboSoThe.Name = "cboSoThe";
+            this.cboSoThe.Size = new System.Drawing.Size(305, 28);
+            this.cboSoThe.TabIndex = 2;
             // 
-            // comboBox1
+            // txtMaPNT
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(158, 85);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(305, 28);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(158, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(305, 27);
-            this.textBox1.TabIndex = 1;
+            this.txtMaPNT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMaPNT.Location = new System.Drawing.Point(158, 44);
+            this.txtMaPNT.Name = "txtMaPNT";
+            this.txtMaPNT.Size = new System.Drawing.Size(305, 27);
+            this.txtMaPNT.TabIndex = 1;
             // 
             // label8
             // 
@@ -405,7 +429,7 @@ namespace QL_THUVIET_2021
             this.Size = new System.Drawing.Size(1220, 605);
             this.Load += new System.EventHandler(this.UserPhieuMuon_Load);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhacTra)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -419,20 +443,18 @@ namespace QL_THUVIET_2021
         private System.Windows.Forms.ComboBox cboTImKiem;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevComponents.DotNetBar.ButtonX btnXuat;
         private DevComponents.DotNetBar.ButtonX btnLuu;
         private DevComponents.DotNetBar.ButtonX btnSua;
         private DevComponents.DotNetBar.ButtonX btnXoa;
         private DevComponents.DotNetBar.ButtonX btnThem;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dtpNgayLap;
+        private System.Windows.Forms.ComboBox cboMaSach;
+        private System.Windows.Forms.ComboBox cboMaNV;
+        private System.Windows.Forms.ComboBox cboMaSV;
+        private System.Windows.Forms.ComboBox cboSoThe;
+        private System.Windows.Forms.TextBox txtMaPNT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -441,5 +463,7 @@ namespace QL_THUVIET_2021
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtGiaPhat;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dgvNhacTra;
     }
 }

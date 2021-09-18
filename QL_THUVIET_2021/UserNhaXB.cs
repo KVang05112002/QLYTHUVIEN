@@ -37,7 +37,7 @@ namespace QL_THUVIET_2021
             dtgXNXB.Columns[3].HeaderText = "Email";
             dtgXNXB.Columns[3].Width = 150;
             dtgXNXB.Columns[4].HeaderText = "Người đại diện";
-            dtgXNXB.Columns[4].Width = 150;
+            dtgXNXB.Columns[4].Width = 250;
             dtgXNXB.AllowUserToAddRows = false;
             dtgXNXB.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -54,19 +54,59 @@ namespace QL_THUVIET_2021
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             ResetValue();
-            string sql = "Excecute dbo.sp_NXB_SinhMaTuDong";
+            string sql;
+            sql = "Execute dbo.sp_NXB_SinhMaTuDong";
             txtMaNXB.Text = Class.Function.GetFieldValues(sql);
             LoadDataGridview();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-          
+            string sql;
+            if(tbNXB.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }    
+            if(txtMaNXB.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn cần chọn mã Nhà xuất bản cần sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaNXB.Focus();
+                return;
+            }
+            sql = " execute [dbo].[SP_SuaNXB] @MaNXB = '" + txtMaNXB.Text.Trim() + "', @TenNXB = N'" + txtTenNXB.Text.Trim() + "',@DiaChi = N'" + txtDiaChi.Text.Trim() + "', @Email='" + txtEmail.Text.Trim() + "', @TTNDaiDien=N'" + txtDaiDien.Text.Trim() + "'";
+            Class.Function.RunSQL(sql);
+            LoadDataGridview();
+            ResetValue();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-           
+                string sql;
+                if (tbNXB.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (txtMaNXB.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn cần chọn mã Nhà xuất bản cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtMaNXB.Focus();
+                    return;
+                }
+                sql = "Select MaNXB from Sach where MaNXB= '" + txtMaNXB.Text.Trim() + "'";
+                if (Class.Function.KiemTraKhoaTrung(sql))
+                {
+                MessageBox.Show("Bạn không thể xóa Nhà xuất bản này vì sách nhà xuất bản này vẫn còn trong hệ thống thư viện", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ResetValue();
+                    return;
+                }
+            sql = "Delete NhaXuatBan Where MaNXB=N'" + txtMaNXB.Text.Trim() + "'";
+                Class.Function.RunSQL(sql);
+            MessageBox.Show("Xóa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadDataGridview();
+                ResetValue();
+            
         }
 
         private void dtgXNXB_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -122,7 +162,12 @@ namespace QL_THUVIET_2021
                 MessageBox.Show("Mã khóa này đã được sử dụng vui lòng chọn mã khóa khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            sql = "Excute dbo.";
+            sql = "Execute [dbo].[SP_ThemNXB] '" + txtMaNXB.Text + "', N'" + txtTenNXB.Text + "',N'" + txtDiaChi.Text + "', N'" + txtEmail.Text + "', N'" + txtDaiDien.Text + "'";
+            Class.Function.RunSQL(sql);
+            LoadDataGridview();
+            ResetValue();
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
         }
     }
 }
