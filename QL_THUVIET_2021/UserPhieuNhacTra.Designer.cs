@@ -29,8 +29,8 @@ namespace QL_THUVIET_2021
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPhieuNhacTra));
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.cboTImKiem = new System.Windows.Forms.ComboBox();
@@ -58,6 +58,7 @@ namespace QL_THUVIET_2021
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLoadX = new DevComponents.DotNetBar.ButtonX();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhacTra)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -115,24 +116,24 @@ namespace QL_THUVIET_2021
             // 
             // dgvNhacTra
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNhacTra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNhacTra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNhacTra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNhacTra.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNhacTra.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvNhacTra.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvNhacTra.Location = new System.Drawing.Point(6, 26);
             this.dgvNhacTra.Name = "dgvNhacTra";
@@ -146,6 +147,7 @@ namespace QL_THUVIET_2021
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnLoadX);
             this.groupBox1.Controls.Add(this.txtGiaPhat);
             this.groupBox1.Controls.Add(this.btnXuat);
             this.groupBox1.Controls.Add(this.btnLuu);
@@ -411,6 +413,25 @@ namespace QL_THUVIET_2021
             this.label1.TabIndex = 15;
             this.label1.Text = "DANH MỤC LẬP PHIẾU NHẮC TRẢ SÁNH";
             // 
+            // btnLoadX
+            // 
+            this.btnLoadX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnLoadX.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLoadX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLoadX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnLoadX.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
+            this.btnLoadX.Image = global::QL_THUVIET_2021.Properties.Resources.load;
+            this.btnLoadX.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.btnLoadX.ImageTextSpacing = 10;
+            this.btnLoadX.Location = new System.Drawing.Point(344, 436);
+            this.btnLoadX.Name = "btnLoadX";
+            this.btnLoadX.Size = new System.Drawing.Size(137, 55);
+            this.btnLoadX.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnLoadX.TabIndex = 32;
+            this.btnLoadX.Text = "Load";
+            this.btnLoadX.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnLoadX.Click += new System.EventHandler(this.btnLoadX_Click);
+            // 
             // UserPhieuNhacTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -465,5 +486,6 @@ namespace QL_THUVIET_2021
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtGiaPhat;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvNhacTra;
+        private DevComponents.DotNetBar.ButtonX btnLoadX;
     }
 }

@@ -151,6 +151,12 @@
     <Compile Include="UserQLYNhanVien.Designer.cs">
       <DependentUpon>UserQLYNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserSach.Designer.cs">
+      <DependentUpon>UserSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserSinhVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserQLYNhanVien.resx">
       <DependentUpon>UserQLYNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSach.resx">
+      <DependentUpon>UserSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSinhVien.resx">
       <DependentUpon>UserSinhVien.cs</DependentUpon>

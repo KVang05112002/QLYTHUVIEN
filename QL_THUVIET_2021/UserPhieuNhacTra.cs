@@ -173,7 +173,6 @@ namespace QL_THUVIET_2021
             LoadDataGridView();
             ResetValues();
         }
-
         private void dgvNhacTra_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (tbPhieunhactra.Rows.Count == 0)
@@ -198,13 +197,38 @@ namespace QL_THUVIET_2021
         private void LoadTimKiem()
         {
             string sql;
-            sql = "Select * form PhieuNhacTra where MaPNT like Like '%" + txtMaPNT.Text + "%'";
+            sql = "Select * from PhieuNhacTra where MaPNT Like '%" + txtMaPNT.Text + "%'";
             tbPhieunhactra = Class.Function.GetDataToTable(sql);
             dgvNhacTra.DataSource = tbPhieunhactra;
+            string str;
+            str = "select SoThe from PhieuNhacTra where MaPNT = '" + txtMaPNT.Text + "'";
+            cboSoThe.Text = Class.Function.GetFieldValues(str);
+            str = "select MaSV from PhieuNhacTra where MaPNT = '" + txtMaPNT.Text + "'";
+            cboMaSV.Text = Class.Function.GetFieldValues(str);
+            str = "select NgayLapPhat from PhieuNhacTra where MaPNT = '" + txtMaPNT.Text + "'";
+            dtpNgayLap.Text = Class.Function.GetFieldValues(str);
+            str = "select DonGiaPhat from PhieuNhacTra where MaPNT = '" + txtMaPNT.Text + "'";
+            txtGiaPhat.Text = Class.Function.GetFieldValues(str);
+            str = "select MaNV from PhieuNhacTra where MaPNT = '" + txtMaPNT.Text + "'";
+            cboMaNV.Text = Class.Function.GetFieldValues(str);
+            str = "select MaSach from PhieuNhacTra where MaPNT = '" + txtMaPNT.Text + "'";
+            cboMaSach.Text = Class.Function.GetFieldValues(str);
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-
+            if(cboTImKiem.Text == "")
+            {
+                MessageBox.Show("Bạn phải chọn mã Phiếu nhắc trả cần tìm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cboTImKiem.Focus();
+                return;
+            }
+            txtMaPNT.Text = cboTImKiem.Text;
+            LoadTimKiem();
+            cboTImKiem.SelectedIndex = -1;
+        }
+        private void btnLoadX_Click(object sender, EventArgs e)
+        {
+            LoadDataGridView();
         }
     }
 }

@@ -307,5 +307,12 @@ namespace QL_THUVIET_2021
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnSach_Click(object sender, EventArgs e)
+        {
+                UserSach sach = new UserSach();
+                AddNewTab("QL Sach", sach);
+            
+        }
     }
 }
