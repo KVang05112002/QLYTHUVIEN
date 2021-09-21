@@ -157,6 +157,12 @@
     <Compile Include="UserSach.Designer.cs">
       <DependentUpon>UserSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSachMuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserSachMuon.Designer.cs">
+      <DependentUpon>UserSachMuon.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserSinhVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserSach.resx">
       <DependentUpon>UserSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSachMuon.resx">
+      <DependentUpon>UserSachMuon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSinhVien.resx">
       <DependentUpon>UserSinhVien.cs</DependentUpon>

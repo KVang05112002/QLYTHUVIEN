@@ -314,5 +314,11 @@ namespace QL_THUVIET_2021
                 AddNewTab("QL Sach", sach);
             
         }
+
+        private void btnSachMuon_Click(object sender, EventArgs e)
+        {
+            UserSachMuon sachMuon = new UserSachMuon();
+            AddNewTab("QL Sách Mượn", sachMuon);
+        }
     }
 }

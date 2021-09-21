@@ -70,8 +70,9 @@ namespace QL_THUVIET_2021
             btnSua.Enabled = false;
             ResetValues();
             string sql;
-            sql = "Execute dbo.";
+            sql = "Execute dbo.sp_Sach_SinhMaTuDong";
             txtMaSach.Text = Class.Function.GetFieldValues(sql);
+            //trangthai();
             LoadSach();
         }
         private void dgvSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,6 +95,8 @@ namespace QL_THUVIET_2021
             cboMaTG.Text = dgvSach.CurrentRow.Cells["MaTG"].Value.ToString();
             cboMaTheLoai.Text = dgvSach.CurrentRow.Cells["MaTL"].Value.ToString();
             cboNhaXuatBan.Text = dgvSach.CurrentRow.Cells["MaNXB"].Value.ToString();
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -110,12 +113,12 @@ namespace QL_THUVIET_2021
                 MessageBox.Show("Mã Sách này đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            sql = "";
+            sql = "execute dbo.sp_insert_sach '" + txtMaSach.Text + "',N'" + txtTenSach.Text + "','" + Function.Ngaythangnam(dtpNamXuatBan.Text) + "','" + txtSoLuong.Text + "',N'" + cboTrangThai.Text + "','" + cboMaTG.Text + "','" + cboMaTheLoai.Text + "','" + cboNhaXuatBan.Text + "'";
             Class.Function.RunSQL(sql);
             LoadSach();
             ResetValues();
             btnXoa.Enabled = true;
-            btnLuu.Enabled = true;
+            btnSua.Enabled = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -132,7 +135,19 @@ namespace QL_THUVIET_2021
                 txtMaSach.Focus();
                 return;
             }
-            sql = "";
+            sql = "select MaSach from PhieuMuon where MaSach=N'" +txtMaSach.Text+ "'";
+            if (Class.Function.KiemTraKhoaTrung(sql))
+            {
+                MessageBox.Show("Mã Sách này đã được sử dụng trên Phiếu mượn không thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sql = "select MaSach from PhieuNhacTra where MaSach=N'" + txtMaSach.Text + "'";
+            if (Class.Function.KiemTraKhoaTrung(sql))
+            {
+                MessageBox.Show("Mã Sách này đã được sử dụng trên phiếu nhắc trả không thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sql = "delete Sach where MaSach='" + txtMaSach.Text.Trim() + "'";
             Class.Function.RunSQL(sql);
             LoadSach();
             ResetValues();
@@ -153,7 +168,8 @@ namespace QL_THUVIET_2021
                 txtMaSach.Focus();
                 return;
             }
-            sql = "";
+            
+            sql = "Execute dbo.sp_update_sach @MaSach = '" + txtMaSach.Text + "',@TenSach = N'" + txtTenSach.Text + "',@NamXB = '" + Function.Ngaythangnam(dtpNamXuatBan.Text) + "',@SoLuong = '" + txtSoLuong.Text + "',@TrangThai= N'" + cboTrangThai.Text + "',@MaTG = '" + cboMaTG.Text + "',@MaTL = '" + cboMaTheLoai.Text + "',@MaNXB = '" + cboNhaXuatBan.Text + "'";
             Class.Function.RunSQL(sql);
             LoadSach();
             ResetValues();
@@ -162,6 +178,23 @@ namespace QL_THUVIET_2021
         private void btnXuat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboTrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            trangthai();
+        }
+        private void trangthai()
+        {
+
+            if (txtSoLuong.Text.Trim().Length > 0)
+            {
+                cboTrangThai.Text = "Còn";
+            }
+            else
+            {
+                cboTrangThai.Text = "Hết Sách";
+            }
         }
     }
 }

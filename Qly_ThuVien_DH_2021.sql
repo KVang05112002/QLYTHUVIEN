@@ -89,10 +89,13 @@ create table MuonTra
 	NgayMuon date,
 	SoLuongMuon int,
 	TinhTrang nvarchar (100),
-	GhiChu nvarchar(200)
+	GhiChu nvarchar(200),
+	NgayTra date,
+	MaSach varchar(20)
 	foreign key (SoThe) references TheThuVien(SoThe),
 	foreign key (MaNV) references NhanVien(MaNV),
-	foreign key (MaSV) references SinhVien(MaSV)
+	foreign key (MaSV) references SinhVien(MaSV),
+	Constraint fk_MuonTra_Sach foreign key (MaSach) references Sach(MaSach)
 )
 
 create table PhieuMuon
@@ -236,6 +239,47 @@ begin
 		select @ma_next
 end
 execute dbo.sp_Sach_SinhMaTuDong
+-- thêm dữ liệu sách
+create proc sp_insert_sach
+(
+	@MaSach varchar(20),
+	@TenSach nvarchar(150),
+	@NamXB date,
+	@SoLuong int,
+	@TrangThai Nvarchar(50),
+	@MaTG varchar(20),
+	@MaTL varchar(20),
+	@MaNXB varchar(20)
+)
+as
+begin
+	insert into Sach values(@MaSach,@TenSach,@NamXB,@SoLuong,@TrangThai,@MaTG,@MaTL,@MaNXB)
+end
+--update dữ liệu sách
+create proc sp_update_sach
+(
+	@MaSach varchar(20),
+	@TenSach nvarchar(150),
+	@NamXB date,
+	@SoLuong int,
+	@TrangThai Nvarchar(50),
+	@MaTG varchar(20),
+	@MaTL varchar(20),
+	@MaNXB varchar(20)
+)
+as
+begin
+	update Sach
+	set
+	TenSach = @TenSach,
+	NamXB = @NamXB,
+	SoLuong = @SoLuong,
+	TrangThai = @TrangThai,
+	MaTG = @MaTG,
+	MaTL = @MaTL,
+	MaNXB = @MaNXB
+	where MaSach = @MaSach
+end
 go
 
 -- Sinh Mã tự động Mượn tả theo ngày
