@@ -639,3 +639,23 @@ begin
 	MaSach = @MaSach
 	where MaPNT = @MaPNT
 end
+go
+
+--Sách Mượn
+--SInh Mã Tự Động Sách Mượn
+create proc sp_SachMuon_SinhMaTuDong
+as
+begin
+	declare @ma_next varchar(20)
+	declare @max int 
+
+	select @max=Count(MaMT) + 1 from MuonTra where MaMT like 'SM'
+	set @ma_next = 'SM' + right('00' + cast(@max as varchar(20)),20)
+
+	while (exists(select MaMT from MuonTra where MaMT = @ma_next))
+		begin
+			set @max = @max + 1
+			set @ma_next='SM' + RIGHT('00' + cast(@max as varchar(20)),20)
+		end
+		select @ma_next
+end

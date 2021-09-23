@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QL_THUVIET_2021.Class;
-
+//K' Vảng JinJin
 namespace QL_THUVIET_2021
 {
     public partial class UserSachMuon : UserControl
@@ -21,6 +21,14 @@ namespace QL_THUVIET_2021
         DataTable tbSachMuon;
         private void UserSachMuon_Load(object sender, EventArgs e)
         {
+            Function.FillCombo("select SoThe, GhiChu from TheThuVien", cboSoThe, "SoThe", "SoThe");
+            cboSoThe.SelectedIndex = -1;
+            Function.FillCombo("select MaNV, HoTen from NhanVien", cboMaNhanVien, "MaNV", "MaNV");
+            cboMaNhanVien.SelectedIndex = -1;
+            Function.FillCombo("select MaSV, HoTenSV from SinhVien", cboMaSinhVien, "MaSV", "MaSV");
+            cboMaSinhVien.SelectedIndex = -1;
+            Function.FillCombo("select MaSach, TenSach from Sach", cboMaSach, "MaSach", "MaSach");
+            cboMaSach.SelectedIndex = -1;
             LoadSachMuon();
         }
         private void LoadSachMuon()
@@ -55,12 +63,13 @@ namespace QL_THUVIET_2021
         private void ResetValues()
         {
             txtMaSachMuon.Text = "";
-            txtSoLuong.Text = "0";
+            txtSoLuong.Text = "";
             txtGhiCHu.Text = "";
             cboMaNhanVien.Text = "";
             cboMaSinhVien.Text = "";
             cboSoThe.Text = "";
             cboTinhTrang.Text = "";
+            cboMaSach.Text = "";
         }
         private void dgvSachMuon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -79,7 +88,7 @@ namespace QL_THUVIET_2021
             cboMaNhanVien.Text = dgvSachMuon.CurrentRow.Cells["MaNV"].Value.ToString();
             cboMaSinhVien.Text = dgvSachMuon.CurrentRow.Cells["MaSV"].Value.ToString();
             dtpNgayMuon.Text = dgvSachMuon.CurrentRow.Cells["NgayMuon"].Value.ToString();
-            txtSoLuong.Text = dgvSachMuon.CurrentRow.Cells["SoLuonMuon"].Value.ToString();
+            txtSoLuong.Text = dgvSachMuon.CurrentRow.Cells["SoLuongMuon"].Value.ToString();
             cboTinhTrang.Text = dgvSachMuon.CurrentRow.Cells["TinhTrang"].Value.ToString();
             txtGhiCHu.Text = dgvSachMuon.CurrentRow.Cells["GhiChu"].Value.ToString();
             dtpNgayTra.Text = dgvSachMuon.CurrentRow.Cells["NgayTra"].Value.ToString();
@@ -99,55 +108,49 @@ namespace QL_THUVIET_2021
         private void btnLuu_Click(object sender, EventArgs e)
         {
             string sql;
-            if(txtMaSachMuon.Text.Length == 0)
+            if(txtMaSachMuon.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn Phải nhập Mã!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMaSachMuon.Focus();
                 return;
             }
-            if (txtSoLuong.Text.Length == 0)
+            if (txtSoLuong.Text == "")
             {
                 MessageBox.Show("Bạn Phải nhập số lượng mượn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtSoLuong.Focus();
                 return;
             }
-            if (cboSoThe.Text.Length == 0)
+            if (cboSoThe.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn Phải nhập số thẻ thư viện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboSoThe.Focus();
                 return;
             }
-            if (cboMaNhanVien.Text.Length == 0)
+            if (cboMaNhanVien.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn Phải nhập Mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboMaNhanVien.Focus();
                 return;
             }
-            if (cboMaSinhVien.Text.Length == 0)
+            if (cboMaSinhVien.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn Phải nhập Mã Sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboMaSinhVien.Focus();
                 return;
             }
-            if (cboMaSach.Text.Length == 0)
+            if (cboMaSach.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn Phải nhập Mã Sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboMaSach.Focus();
                 return;
             }
-            if (cboTinhTrang.Text.Length == 0)
-            {
-                MessageBox.Show("Bạn Phải nhập Tình Trạng Sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cboTinhTrang.Focus();
-                return;
-            }
-            if (dtpNgayMuon.Text.Length == 0)
+            if (dtpNgayMuon.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn Phải nhập ngày mượn Sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dtpNgayMuon.Focus();
                 return;
             }
-            if (dtpNgayTra.Text.Length == 0)
+            if (dtpNgayTra.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn Phải nhập Ngày trả Sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dtpNgayTra.Focus();
@@ -159,7 +162,7 @@ namespace QL_THUVIET_2021
                 MessageBox.Show("Mã này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            sql = "";
+            sql = "Execute dbo.sp_insert_SachMuon '" + txtMaSachMuon.Text + "','" + cboSoThe.Text + "','" + cboMaNhanVien.Text + "','" + cboMaSinhVien.Text + "','" + Function.Ngaythangnam(dtpNgayMuon.Text) + "'," + txtSoLuong.Text + ",N'Đã Mượn',N'" + txtGhiCHu.Text + "','" + Function.Ngaythangnam(dtpNgayTra.Text) + "','" + cboMaSach.Text + "'";
             Class.Function.RunSQL(sql);
             LoadSachMuon();
             ResetValues();
@@ -199,10 +202,53 @@ namespace QL_THUVIET_2021
                 txtMaSachMuon.Focus();
                 return;
             }
-            sql = "";
+            sql = "Execute dbo.sp_Update_SachMuon @MaMT='" + txtMaSachMuon.Text + "',@SoThe='" + cboSoThe.Text + "',@MaNV='" + cboMaNhanVien.Text + "',@MaSV='" + cboMaSinhVien.Text + "',@NgayMuon='" + Function.Ngaythangnam(dtpNgayMuon.Text) + "',@SoLuongMuon=" + txtSoLuong.Text + ",@TinhTrang=N'" + cboTinhTrang.Text + "',@GhiChu=N'" + txtGhiCHu.Text + "',@NgayTra='" + Function.Ngaythangnam(dtpNgayTra.Text) + "',@MaSach='" + cboMaSach.Text + "'"; 
             Class.Function.RunSQL(sql);
             LoadSachMuon();
             ResetValues();
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTraSach_Click(object sender, EventArgs e)
+        {
+            string sql;
+            sql = "Execute dbo.sp_Update_SachMuon @MaMT='" + txtMaSachMuon.Text + "',@SoThe='" + cboSoThe.Text + "',@MaNV='" + cboMaNhanVien.Text + "',@MaSV='" + cboMaSinhVien.Text + "',@NgayMuon='" + Function.Ngaythangnam(dtpNgayMuon.Text) + "',@SoLuongMuon=" + txtSoLuong.Text + ",@TinhTrang=N'Đã Trả',@GhiChu=N'" + txtGhiCHu.Text + "',@NgayTra='" + Function.Ngaythangnam(dtpNgayTra.Text) + "',@MaSach='" + cboMaSach.Text + "'";
+            Class.Function.RunSQL(sql);
+            LoadSachMuon();
+            ResetValues();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text == "")
+            {
+                MessageBox.Show("Bạn Phải chọn mã Phiếu mượn để tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTimKiem.Focus();
+                return;
+            }
+            cboMaSinhVien.Text = txtTimKiem.Text;
+            LoadTimKiem();
+        }
+        private void LoadTimKiem()
+        {
+            string sql = "Select * from MuonTra where MaSV like '%" + cboMaSinhVien.Text + "%'";
+            tbSachMuon = Class.Function.GetDataToTable(sql);
+            dgvSachMuon.DataSource = tbSachMuon;
+            txtMaSachMuon.Text = dgvSachMuon.CurrentRow.Cells["MaMT"].Value.ToString();
+            cboSoThe.Text = dgvSachMuon.CurrentRow.Cells["SoThe"].Value.ToString();
+            cboMaNhanVien.Text = dgvSachMuon.CurrentRow.Cells["MaNV"].Value.ToString();
+            cboMaSinhVien.Text = dgvSachMuon.CurrentRow.Cells["MaSV"].Value.ToString();
+            dtpNgayMuon.Text = dgvSachMuon.CurrentRow.Cells["NgayMuon"].Value.ToString();
+            txtSoLuong.Text = dgvSachMuon.CurrentRow.Cells["SoLuongMuon"].Value.ToString();
+            cboTinhTrang.Text = dgvSachMuon.CurrentRow.Cells["TinhTrang"].Value.ToString();
+            txtGhiCHu.Text = dgvSachMuon.CurrentRow.Cells["GhiChu"].Value.ToString();
+            dtpNgayTra.Text = dgvSachMuon.CurrentRow.Cells["NgayTra"].Value.ToString();
+            cboMaSach.Text = dgvSachMuon.CurrentRow.Cells["MaSach"].Value.ToString();
+
         }
     }
 }

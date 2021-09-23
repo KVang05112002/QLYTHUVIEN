@@ -68,9 +68,5 @@ namespace QL_THUVIET_2021
             }    
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
     }
 }
