@@ -46,7 +46,6 @@ namespace QL_THUVIET_2021
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnXuat = new DevComponents.DotNetBar.ButtonX();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
@@ -229,25 +228,6 @@ namespace QL_THUVIET_2021
             this.label2.TabIndex = 0;
             this.label2.Text = "Số Thẻ:";
             // 
-            // btnXuat
-            // 
-            this.btnXuat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXuat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnXuat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXuat.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
-            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
-            this.btnXuat.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnXuat.ImageTextSpacing = 10;
-            this.btnXuat.Location = new System.Drawing.Point(781, 299);
-            this.btnXuat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(148, 63);
-            this.btnXuat.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnXuat.TabIndex = 31;
-            this.btnXuat.Text = "Xuất";
-            this.btnXuat.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            // 
             // btnLuu
             // 
             this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -258,7 +238,7 @@ namespace QL_THUVIET_2021
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnLuu.ImageTextSpacing = 10;
-            this.btnLuu.Location = new System.Drawing.Point(605, 299);
+            this.btnLuu.Location = new System.Drawing.Point(711, 299);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(148, 63);
@@ -278,7 +258,7 @@ namespace QL_THUVIET_2021
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnSua.ImageTextSpacing = 10;
-            this.btnSua.Location = new System.Drawing.Point(428, 299);
+            this.btnSua.Location = new System.Drawing.Point(534, 299);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(148, 63);
@@ -298,7 +278,7 @@ namespace QL_THUVIET_2021
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnXoa.ImageTextSpacing = 10;
-            this.btnXoa.Location = new System.Drawing.Point(252, 299);
+            this.btnXoa.Location = new System.Drawing.Point(358, 299);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(148, 63);
@@ -318,7 +298,7 @@ namespace QL_THUVIET_2021
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnThem.ImageTextSpacing = 10;
-            this.btnThem.Location = new System.Drawing.Point(78, 299);
+            this.btnThem.Location = new System.Drawing.Point(184, 299);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(148, 63);
@@ -360,7 +340,6 @@ namespace QL_THUVIET_2021
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvTheThuVien);
-            this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
@@ -402,7 +381,6 @@ namespace QL_THUVIET_2021
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private DevComponents.DotNetBar.ButtonX btnXuat;
         private DevComponents.DotNetBar.ButtonX btnLuu;
         private DevComponents.DotNetBar.ButtonX btnSua;
         private DevComponents.DotNetBar.ButtonX btnXoa;

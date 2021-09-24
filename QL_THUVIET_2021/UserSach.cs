@@ -177,7 +177,8 @@ namespace QL_THUVIET_2021
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
-
+            RPSach sach = new RPSach();
+            sach.ShowDialog();
         }
 
         private void cboTrangThai_SelectedIndexChanged(object sender, EventArgs e)

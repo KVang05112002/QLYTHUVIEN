@@ -39,7 +39,6 @@ namespace QL_THUVIET_2021
             this.txtMaTL = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnXuat = new DevComponents.DotNetBar.ButtonX();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
@@ -141,24 +140,6 @@ namespace QL_THUVIET_2021
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Thể Loại:";
             // 
-            // btnXuat
-            // 
-            this.btnXuat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXuat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnXuat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXuat.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
-            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
-            this.btnXuat.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnXuat.ImageTextSpacing = 10;
-            this.btnXuat.Location = new System.Drawing.Point(757, 227);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(150, 55);
-            this.btnXuat.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnXuat.TabIndex = 30;
-            this.btnXuat.Text = "Xuất";
-            this.btnXuat.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            // 
             // btnLuu
             // 
             this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -169,7 +150,7 @@ namespace QL_THUVIET_2021
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnLuu.ImageTextSpacing = 10;
-            this.btnLuu.Location = new System.Drawing.Point(571, 227);
+            this.btnLuu.Location = new System.Drawing.Point(662, 222);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(150, 55);
             this.btnLuu.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -188,7 +169,7 @@ namespace QL_THUVIET_2021
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnSua.ImageTextSpacing = 10;
-            this.btnSua.Location = new System.Drawing.Point(388, 227);
+            this.btnSua.Location = new System.Drawing.Point(479, 222);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(150, 55);
             this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -207,7 +188,7 @@ namespace QL_THUVIET_2021
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnXoa.ImageTextSpacing = 10;
-            this.btnXoa.Location = new System.Drawing.Point(207, 227);
+            this.btnXoa.Location = new System.Drawing.Point(298, 222);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(150, 55);
             this.btnXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -226,7 +207,7 @@ namespace QL_THUVIET_2021
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnThem.ImageTextSpacing = 10;
-            this.btnThem.Location = new System.Drawing.Point(33, 227);
+            this.btnThem.Location = new System.Drawing.Point(124, 222);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(150, 55);
             this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -263,7 +244,6 @@ namespace QL_THUVIET_2021
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dtgXTheLoai);
-            this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
@@ -295,7 +275,6 @@ namespace QL_THUVIET_2021
         private System.Windows.Forms.TextBox txtMaTL;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private DevComponents.DotNetBar.ButtonX btnXuat;
         private DevComponents.DotNetBar.ButtonX btnLuu;
         private DevComponents.DotNetBar.ButtonX btnSua;
         private DevComponents.DotNetBar.ButtonX btnXoa;

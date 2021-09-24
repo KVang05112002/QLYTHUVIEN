@@ -67,6 +67,12 @@ namespace QL_THUVIET_2021
                 txtMaTL.Focus();
                 return;
             }
+            sql = "select MaTL from Sach where MaTL = '" + txtMaTL.Text + "'";
+            if(Class.Function.KiemTraKhoaTrung(sql))
+            {
+                MessageBox.Show("Bạn không thể xóa thể loại sách này đươc vì sách đã được thêm vào hệ thống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }    
             sql = "Delete TheLoai where MaTL=N'" + txtMaTL.Text.Trim() + "'";
             Class.Function.RunSQL(sql);
             LoadDataGridView();

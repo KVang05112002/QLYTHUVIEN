@@ -30,7 +30,7 @@ namespace QL_THUVIET_2021
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserTacGia));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,7 +41,6 @@ namespace QL_THUVIET_2021
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnXuat = new DevComponents.DotNetBar.ButtonX();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
@@ -167,24 +166,6 @@ namespace QL_THUVIET_2021
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Tác Giả:";
             // 
-            // btnXuat
-            // 
-            this.btnXuat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXuat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnXuat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXuat.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
-            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
-            this.btnXuat.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnXuat.ImageTextSpacing = 10;
-            this.btnXuat.Location = new System.Drawing.Point(814, 300);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(150, 55);
-            this.btnXuat.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnXuat.TabIndex = 25;
-            this.btnXuat.Text = "Xuất";
-            this.btnXuat.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            // 
             // btnLuu
             // 
             this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -195,7 +176,7 @@ namespace QL_THUVIET_2021
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnLuu.ImageTextSpacing = 10;
-            this.btnLuu.Location = new System.Drawing.Point(628, 300);
+            this.btnLuu.Location = new System.Drawing.Point(701, 300);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(150, 55);
             this.btnLuu.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -214,7 +195,7 @@ namespace QL_THUVIET_2021
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnSua.ImageTextSpacing = 10;
-            this.btnSua.Location = new System.Drawing.Point(445, 300);
+            this.btnSua.Location = new System.Drawing.Point(518, 300);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(150, 55);
             this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -233,7 +214,7 @@ namespace QL_THUVIET_2021
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnXoa.ImageTextSpacing = 10;
-            this.btnXoa.Location = new System.Drawing.Point(264, 300);
+            this.btnXoa.Location = new System.Drawing.Point(337, 300);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(150, 55);
             this.btnXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -252,7 +233,7 @@ namespace QL_THUVIET_2021
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnThem.ImageTextSpacing = 10;
-            this.btnThem.Location = new System.Drawing.Point(90, 300);
+            this.btnThem.Location = new System.Drawing.Point(163, 300);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(150, 55);
             this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -265,14 +246,14 @@ namespace QL_THUVIET_2021
             // 
             this.dtgXTacGia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtgXTacGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgXTacGia.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgXTacGia.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgXTacGia.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dtgXTacGia.Location = new System.Drawing.Point(4, 389);
             this.dtgXTacGia.Name = "dtgXTacGia";
@@ -289,7 +270,6 @@ namespace QL_THUVIET_2021
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dtgXTacGia);
-            this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
@@ -323,7 +303,6 @@ namespace QL_THUVIET_2021
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private DevComponents.DotNetBar.ButtonX btnXuat;
         private DevComponents.DotNetBar.ButtonX btnLuu;
         private DevComponents.DotNetBar.ButtonX btnSua;
         private DevComponents.DotNetBar.ButtonX btnXoa;

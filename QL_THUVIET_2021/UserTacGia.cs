@@ -145,6 +145,12 @@ namespace QL_THUVIET_2021
                 txtMaTG.Focus();
                 return;
             }
+            sql = "select MaTG from Sach where MaTG=N'" + txtMaTG.Text + "'";
+            if (Class.Function.KiemTraKhoaTrung(sql))
+            {
+                MessageBox.Show("bạn không thể xóa tác giả này được vì sách của tác giả này vẫn còn trên hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             sql = "Delete TacGia where MaTG=N'" + txtMaTG.Text.Trim() + "'";
             Class.Function.RunSQL(sql);
             LoadDataGridView();

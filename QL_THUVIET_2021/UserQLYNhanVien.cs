@@ -207,5 +207,11 @@ namespace QL_THUVIET_2021
             }    
 
         }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            RPNhanVien nhanvien = new RPNhanVien();
+            nhanvien.ShowDialog();
+        }
     }
 }

@@ -81,6 +81,7 @@ namespace QL_THUVIET_2021
             this.txtMatKhau.Size = new System.Drawing.Size(181, 27);
             this.txtMatKhau.TabIndex = 2;
             this.txtMatKhau.UseSystemPasswordChar = true;
+            this.txtMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhau_KeyDown);
             // 
             // btDangNhap
             // 

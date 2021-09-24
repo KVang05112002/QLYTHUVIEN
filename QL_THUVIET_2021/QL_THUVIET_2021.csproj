@@ -114,6 +114,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLY_ThuVien_DHDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPNhanVien.Designer.cs">
+      <DependentUpon>RPNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPSach.Designer.cs">
+      <DependentUpon>RPSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPSachMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPSachMuon.Designer.cs">
+      <DependentUpon>RPSachMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPSinhVien.Designer.cs">
+      <DependentUpon>RPSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserNhaXB.cs">
       <SubType>UserControl</SubType>
@@ -209,6 +233,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RPNhanVien.rdlc" />
+    <EmbeddedResource Include="RPNhanVien.resx">
+      <DependentUpon>RPNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPSach.rdlc" />
+    <EmbeddedResource Include="RPSach.resx">
+      <DependentUpon>RPSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPSachMuon.rdlc" />
+    <EmbeddedResource Include="RPSachMuon.resx">
+      <DependentUpon>RPSachMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPSinhVien.rdlc" />
+    <EmbeddedResource Include="RPSinhVien.resx">
+      <DependentUpon>RPSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserNhaXB.resx">
       <DependentUpon>UserNhaXB.cs</DependentUpon>
     </EmbeddedResource>

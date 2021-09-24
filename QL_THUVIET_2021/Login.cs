@@ -40,7 +40,7 @@ namespace QL_THUVIET_2021
                     {
                         id = dr["TenTK"].ToString();
                     }    
-                }    
+                }
             }
             catch (Exception)
             {
@@ -55,18 +55,31 @@ namespace QL_THUVIET_2021
         public static string ID_Name = "";
         private void btDangNhap_Click(object sender, EventArgs e)
         {
+            getID();
             ID_Name = getID();
-            if(ID_Name != "")
+            conn.Open();
+            SqlCommand cmm = new SqlCommand("SELECT * FROM TaiKhoan WHERE TenTK = N'" + txtTenDangNhap.Text + "' AND MatKhau = N'" + txtMatKhau.Text + "'", conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmm);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (ID_Name != "")
             {
-                FormMain fm = new FormMain();
+                FormMain fm = new FormMain(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
                 fm.Show();
                 this.Hide();
-            }    
+            }
             else
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }    
+            }
         }
 
+        private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btDangNhap.PerformClick();
+            }    
+        }
     }
 }

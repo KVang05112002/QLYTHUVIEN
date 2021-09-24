@@ -38,7 +38,7 @@ namespace QL_THUVIET_2021
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvPhieuMuonX = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnXuat = new DevComponents.DotNetBar.ButtonX();
+            this.btnLoadX = new DevComponents.DotNetBar.ButtonX();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
@@ -55,7 +55,6 @@ namespace QL_THUVIET_2021
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.btnLoadX = new DevComponents.DotNetBar.ButtonX();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuMuonX)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -112,9 +111,9 @@ namespace QL_THUVIET_2021
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPhieuMuonX.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPhieuMuonX.EnableHeadersVisualStyles = false;
@@ -140,7 +139,6 @@ namespace QL_THUVIET_2021
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.btnLoadX);
-            this.groupBox1.Controls.Add(this.btnXuat);
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnXoa);
@@ -164,23 +162,24 @@ namespace QL_THUVIET_2021
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Phiếu Nhập";
             // 
-            // btnXuat
+            // btnLoadX
             // 
-            this.btnXuat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXuat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnXuat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXuat.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
-            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
-            this.btnXuat.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnXuat.ImageTextSpacing = 10;
-            this.btnXuat.Location = new System.Drawing.Point(360, 319);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(155, 55);
-            this.btnXuat.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnXuat.TabIndex = 25;
-            this.btnXuat.Text = "Xuất";
-            this.btnXuat.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnLoadX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnLoadX.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLoadX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLoadX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnLoadX.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
+            this.btnLoadX.Image = global::QL_THUVIET_2021.Properties.Resources.load;
+            this.btnLoadX.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.btnLoadX.ImageTextSpacing = 10;
+            this.btnLoadX.Location = new System.Drawing.Point(360, 319);
+            this.btnLoadX.Name = "btnLoadX";
+            this.btnLoadX.Size = new System.Drawing.Size(155, 55);
+            this.btnLoadX.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnLoadX.TabIndex = 26;
+            this.btnLoadX.Text = "Load";
+            this.btnLoadX.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnLoadX.Click += new System.EventHandler(this.btnLoadX_Click);
             // 
             // btnLuu
             // 
@@ -376,25 +375,6 @@ namespace QL_THUVIET_2021
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // btnLoadX
-            // 
-            this.btnLoadX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnLoadX.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLoadX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLoadX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLoadX.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
-            this.btnLoadX.Image = global::QL_THUVIET_2021.Properties.Resources.load;
-            this.btnLoadX.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnLoadX.ImageTextSpacing = 10;
-            this.btnLoadX.Location = new System.Drawing.Point(360, 391);
-            this.btnLoadX.Name = "btnLoadX";
-            this.btnLoadX.Size = new System.Drawing.Size(155, 55);
-            this.btnLoadX.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnLoadX.TabIndex = 26;
-            this.btnLoadX.Text = "Load";
-            this.btnLoadX.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.btnLoadX.Click += new System.EventHandler(this.btnLoadX_Click);
-            // 
             // UserPhieuMuonTra
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -425,7 +405,6 @@ namespace QL_THUVIET_2021
         private System.Windows.Forms.GroupBox groupBox2;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvPhieuMuonX;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevComponents.DotNetBar.ButtonX btnXuat;
         private DevComponents.DotNetBar.ButtonX btnLuu;
         private DevComponents.DotNetBar.ButtonX btnSua;
         private DevComponents.DotNetBar.ButtonX btnXoa;

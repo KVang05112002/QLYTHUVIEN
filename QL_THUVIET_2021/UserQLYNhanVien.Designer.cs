@@ -137,6 +137,7 @@ namespace QL_THUVIET_2021
             this.btnXuat.TabIndex = 20;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnLuu
             // 

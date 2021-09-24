@@ -14,13 +14,31 @@ namespace QL_THUVIET_2021
 {
     public partial class FormMain :DevComponents.DotNetBar.Office2007RibbonForm
     {
+        string TenDangNhap = "", TenNhanVien = "", MatKhau = "", Quyen = "";
         public FormMain()
         {
             InitializeComponent();
         }
+        public FormMain(string TenDangNhap, string TenNhanVien, string MatKhau, string Quyen)
+        {
+            InitializeComponent();
+            this.TenDangNhap = TenDangNhap;
+            this.TenNhanVien = TenNhanVien;
+            this.MatKhau = MatKhau;
+            this.Quyen = Quyen;
+             
+        }
         private void FormMain_Load(object sender, EventArgs e)
         {
             Class.Function.Connect();
+            if (Quyen == "Admin")
+            {
+                lbHien.Text = "  Admin";
+            }
+            else
+            {
+                lbHien.Text = "  Nhân Viên";
+            }
         }
         private void Closethis()
         {
@@ -66,8 +84,16 @@ namespace QL_THUVIET_2021
 
         private void btnQLNguoiDung_Click(object sender, EventArgs e)
         {
-            FormTaiKhoan ftk = new FormTaiKhoan();
-            AddNewTab("QL Tài Khoản", ftk);
+            if(Quyen == "Admin")
+            {
+                    FormTaiKhoan ftk = new FormTaiKhoan();
+                    AddNewTab("QL Tài Khoản", ftk);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền sử dụng tính năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             //ftk.ShowDialog();
         }
 
@@ -193,14 +219,22 @@ namespace QL_THUVIET_2021
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
-            try
+            if (Quyen == "Admin")
             {
-                UserQLYNhanVien usernhanvien = new UserQLYNhanVien();
-                AddNewTab("QL Nhân Viên", usernhanvien);
+                try
+                {
+                    UserQLYNhanVien usernhanvien = new UserQLYNhanVien();
+                    AddNewTab("QL Nhân Viên", usernhanvien);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Bạn không có quyền sử dụng tính năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
         }
 
@@ -295,6 +329,10 @@ namespace QL_THUVIET_2021
             }
         }
 
+        private void lbHien_Click(object sender, EventArgs e)
+        {
+            
+        }
         private void btnNhacTra_Click(object sender, EventArgs e)
         {
             try

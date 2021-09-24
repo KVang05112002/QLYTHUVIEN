@@ -659,3 +659,51 @@ begin
 		end
 		select @ma_next
 end
+
+--them Sách Mượn
+create proc sp_insert_SachMuon
+(
+	@MaMT varchar(20),
+	@SoThe varchar(20),
+	@MaNV varchar(20),
+	@MaSV varchar(20),
+	@NgayMuon date,
+	@SoLuongMuon int,
+	@TinhTrang nvarchar (100),
+	@GhiChu nvarchar(200),
+	@NgayTra date,
+	@MaSach varchar(20)
+)
+as
+begin
+	Insert into MuonTra Values(@MaMT,@SoThe,@MaNV,@MaSV,@NgayMuon,@SoLuongMuon,@TinhTrang,@GhiChu,@NgayTra,@MaSach)
+end
+--update Sách mượn
+create proc sp_Update_SachMuon
+(
+	@MaMT varchar(20),
+	@SoThe varchar(20),
+	@MaNV varchar(20),
+	@MaSV varchar(20),
+	@NgayMuon date,
+	@SoLuongMuon int,
+	@TinhTrang nvarchar (100),
+	@GhiChu nvarchar(200),
+	@NgayTra date,
+	@MaSach varchar(20)
+)
+as
+begin
+	Update MuonTra
+	set
+	SoThe = @SoThe,
+	MaNV = @MaNV,
+	MaSV = @MaSV,
+	NgayMuon = @NgayMuon,
+	SoLuongMuon = @SoLuongMuon,
+	TinhTrang = @TinhTrang,
+	GhiChu = @GhiChu,
+	NgayTra = @NgayTra,
+	MaSach = @MaSach
+	where MaMT = @MaMT
+end

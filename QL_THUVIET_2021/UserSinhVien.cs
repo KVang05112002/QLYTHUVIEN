@@ -178,5 +178,11 @@ namespace QL_THUVIET_2021
             LoadDataGridView();
             ResetValues();
         }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            RPSinhVien sinhvien = new RPSinhVien();
+            sinhvien.ShowDialog();
+        }
     }
 }

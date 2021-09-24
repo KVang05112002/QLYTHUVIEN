@@ -210,7 +210,8 @@ namespace QL_THUVIET_2021
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
-
+            RPSachMuon sachmuon = new RPSachMuon();
+            sachmuon.ShowDialog();
         }
 
         private void btnTraSach_Click(object sender, EventArgs e)
@@ -230,8 +231,12 @@ namespace QL_THUVIET_2021
                 txtTimKiem.Focus();
                 return;
             }
-            cboMaSinhVien.Text = txtTimKiem.Text;
-            LoadTimKiem();
+            else
+            {
+                cboMaSinhVien.Text = txtTimKiem.Text;
+                LoadTimKiem();
+            }
+            
         }
         private void LoadTimKiem()
         {
