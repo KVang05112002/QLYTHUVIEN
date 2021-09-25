@@ -230,5 +230,9 @@ namespace QL_THUVIET_2021
         {
             LoadDataGridView();
         }
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
