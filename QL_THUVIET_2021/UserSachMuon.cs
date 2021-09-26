@@ -255,5 +255,10 @@ namespace QL_THUVIET_2021
             cboMaSach.Text = dgvSachMuon.CurrentRow.Cells["MaSach"].Value.ToString();
 
         }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadSachMuon();
+        }
     }
 }

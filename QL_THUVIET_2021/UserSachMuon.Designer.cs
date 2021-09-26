@@ -29,11 +29,12 @@ namespace QL_THUVIET_2021
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSachMuon));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiem = new DevComponents.DotNetBar.ButtonX();
             this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayMuon = new System.Windows.Forms.DateTimePicker();
             this.cboTinhTrang = new System.Windows.Forms.ComboBox();
@@ -42,10 +43,12 @@ namespace QL_THUVIET_2021
             this.cboMaNhanVien = new System.Windows.Forms.ComboBox();
             this.cboSoThe = new System.Windows.Forms.ComboBox();
             this.txtGhiCHu = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtMaSachMuon = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,9 +64,7 @@ namespace QL_THUVIET_2021
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnTraSach = new DevComponents.DotNetBar.ButtonX();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new DevComponents.DotNetBar.ButtonX();
+            this.btnLoad = new DevComponents.DotNetBar.ButtonX();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachMuon)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +119,25 @@ namespace QL_THUVIET_2021
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chung";
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnTimKiem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.HoverImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.HoverImage")));
+            this.btnTimKiem.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.btnTimKiem.ImageTextSpacing = 10;
+            this.btnTimKiem.Location = new System.Drawing.Point(837, 157);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(131, 26);
+            this.btnTimKiem.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnTimKiem.TabIndex = 33;
+            this.btnTimKiem.Text = "Tìm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // dtpNgayTra
             // 
@@ -202,6 +222,15 @@ namespace QL_THUVIET_2021
             this.txtGhiCHu.Size = new System.Drawing.Size(243, 80);
             this.txtGhiCHu.TabIndex = 1;
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTimKiem.Location = new System.Drawing.Point(533, 157);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(273, 26);
+            this.txtTimKiem.TabIndex = 1;
+            // 
             // txtSoLuong
             // 
             this.txtSoLuong.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -241,6 +270,17 @@ namespace QL_THUVIET_2021
             this.label10.Size = new System.Drawing.Size(80, 20);
             this.label10.TabIndex = 0;
             this.label10.Text = "Ghi chú:";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(431, 160);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tìm Kiếm:";
             // 
             // label9
             // 
@@ -333,23 +373,23 @@ namespace QL_THUVIET_2021
             // dgvSachMuon
             // 
             this.dgvSachMuon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSachMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSachMuon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSachMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSachMuon.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSachMuon.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSachMuon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvSachMuon.Location = new System.Drawing.Point(4, 361);
             this.dgvSachMuon.Margin = new System.Windows.Forms.Padding(4);
@@ -371,7 +411,7 @@ namespace QL_THUVIET_2021
             this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
             this.btnXuat.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnXuat.ImageTextSpacing = 10;
-            this.btnXuat.Location = new System.Drawing.Point(1020, 288);
+            this.btnXuat.Location = new System.Drawing.Point(945, 285);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(164, 57);
@@ -392,7 +432,7 @@ namespace QL_THUVIET_2021
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnLuu.ImageTextSpacing = 10;
-            this.btnLuu.Location = new System.Drawing.Point(646, 288);
+            this.btnLuu.Location = new System.Drawing.Point(571, 285);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(164, 57);
@@ -413,7 +453,7 @@ namespace QL_THUVIET_2021
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnSua.ImageTextSpacing = 10;
-            this.btnSua.Location = new System.Drawing.Point(468, 288);
+            this.btnSua.Location = new System.Drawing.Point(393, 285);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(164, 57);
@@ -434,7 +474,7 @@ namespace QL_THUVIET_2021
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnXoa.ImageTextSpacing = 10;
-            this.btnXoa.Location = new System.Drawing.Point(285, 288);
+            this.btnXoa.Location = new System.Drawing.Point(210, 285);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(164, 57);
@@ -455,7 +495,7 @@ namespace QL_THUVIET_2021
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnThem.ImageTextSpacing = 10;
-            this.btnThem.Location = new System.Drawing.Point(100, 288);
+            this.btnThem.Location = new System.Drawing.Point(25, 285);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(164, 57);
@@ -476,7 +516,7 @@ namespace QL_THUVIET_2021
             this.btnTraSach.Image = global::QL_THUVIET_2021.Properties.Resources.sach;
             this.btnTraSach.ImageFixedSize = new System.Drawing.Size(50, 50);
             this.btnTraSach.ImageTextSpacing = 10;
-            this.btnTraSach.Location = new System.Drawing.Point(832, 288);
+            this.btnTraSach.Location = new System.Drawing.Point(757, 285);
             this.btnTraSach.Margin = new System.Windows.Forms.Padding(4);
             this.btnTraSach.Name = "btnTraSach";
             this.btnTraSach.Size = new System.Drawing.Size(164, 57);
@@ -486,44 +526,26 @@ namespace QL_THUVIET_2021
             this.btnTraSach.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btnTraSach.Click += new System.EventHandler(this.btnTraSach_Click);
             // 
-            // label6
+            // btnLoad
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(431, 160);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tìm Kiếm:";
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTimKiem.Location = new System.Drawing.Point(533, 157);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(273, 26);
-            this.txtTimKiem.TabIndex = 1;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnTimKiem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.HoverImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.HoverImage")));
-            this.btnTimKiem.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.btnTimKiem.ImageTextSpacing = 10;
-            this.btnTimKiem.Location = new System.Drawing.Point(837, 157);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(131, 26);
-            this.btnTimKiem.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnTimKiem.TabIndex = 33;
-            this.btnTimKiem.Text = "Tìm";
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.btnLoad.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLoad.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.HoverImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__4_;
+            this.btnLoad.Image = global::QL_THUVIET_2021.Properties.Resources.load;
+            this.btnLoad.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.btnLoad.ImageTextSpacing = 10;
+            this.btnLoad.Location = new System.Drawing.Point(1128, 285);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(127, 57);
+            this.btnLoad.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnLoad.TabIndex = 36;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // UserSachMuon
             // 
@@ -531,6 +553,7 @@ namespace QL_THUVIET_2021
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QL_THUVIET_2021.Properties.Resources.tải_xuống__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.btnTraSach);
             this.Controls.Add(this.btnLuu);
@@ -587,5 +610,6 @@ namespace QL_THUVIET_2021
         private DevComponents.DotNetBar.ButtonX btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label6;
+        private DevComponents.DotNetBar.ButtonX btnLoad;
     }
 }

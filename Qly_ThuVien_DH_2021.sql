@@ -281,32 +281,6 @@ begin
 	where MaSach = @MaSach
 end
 go
-
--- Sinh Mã tự động Mượn tả theo ngày
-CREATE FUNCTION auto_MuonTra()
-RETURNS VARCHAR(15)
-AS
-BEGIN
-	DECLARE @id VARCHAR(15)
-	IF (SELECT COUNT(MaMT) FROM MuonTra) = 0
-		SET @id = '0'
-	ELSE
-		SELECT @id = MAX(RIGHT(MaMT, 5)) FROM MuonTra
-		SELECT @id = CASE
-			WHEN @id = 99999 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV00001'
-			WHEN @id >= 0 and @id < 9 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV0000' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
-			WHEN @id >= 9 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV000' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
-			WHEN @id >= 99 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV00' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
-			WHEN @id >= 999 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV0' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
-			WHEN @id >= 9999 THEN CONVERT(VARCHAR,GETDATE(),112) + 'DV' + CONVERT(CHAR, CONVERT(INT, @id) + 1)
-		END
-	RETURN @id
-END
-
-select dbo.auto_MuonTra() from MuonTra
-
-
-
 select*from Sach
 go
 
