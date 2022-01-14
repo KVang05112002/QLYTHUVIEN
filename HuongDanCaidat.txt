@@ -1,0 +1,13 @@
+HƯỚNG DẪN CÀI ĐẶT 
+1. Dowload code.
+
+2. tiến hành cài đặt sql trên sql server rồi kết nối với hệ thống Quản lý thư viện.
+
+3. download dotnetbar về máy.
+- https://softwaresde.com/windows/download-aaEMyyjfHC88rQ9A4Y6pemBxF-1454.html/showlink-10017
+
+4. Tiến hành cài dotnetbar vào visual studio 2019 và add các item vào toolbox của đồ án quản lý thư viện.
+
+5. sao đó add referent của dotnetbar vào hệ thống quản lý thư viện.
+
+6. tiến hành chạy chương trình.

@@ -17,12 +17,10 @@ namespace QL_THUVIET_2021
         public Login()
         {
             InitializeComponent();
+            
         }
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-BPN90P8;Initial Catalog=QLY_ThuVien_DH;Persist Security Info=True;User ID=sa;Password=05112002@VANG");
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
         private string getID()
         {
@@ -80,6 +78,11 @@ namespace QL_THUVIET_2021
             {
                 btDangNhap.PerformClick();
             }    
+        }
+
+        private void lbthoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -95,7 +95,6 @@ namespace QL_THUVIET_2021
             this.đóngTrangKhácToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabGioiThieu = new DevComponents.DotNetBar.TabItem(this.components);
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
@@ -125,10 +124,10 @@ namespace QL_THUVIET_2021
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -518,11 +517,11 @@ namespace QL_THUVIET_2021
             this.ribbonPanel4.Controls.Add(this.ribbonBar5);
             this.ribbonPanel4.Controls.Add(this.ribbonBar6);
             this.ribbonPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel4.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel4.Location = new System.Drawing.Point(0, 58);
             this.ribbonPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
-            this.ribbonPanel4.Size = new System.Drawing.Size(1051, 216);
+            this.ribbonPanel4.Size = new System.Drawing.Size(1051, 158);
             // 
             // 
             // 
@@ -555,7 +554,7 @@ namespace QL_THUVIET_2021
             this.btnNhacTra});
             this.ribbonBar14.Location = new System.Drawing.Point(582, 0);
             this.ribbonBar14.Name = "ribbonBar14";
-            this.ribbonBar14.Size = new System.Drawing.Size(122, 212);
+            this.ribbonBar14.Size = new System.Drawing.Size(122, 154);
             this.ribbonBar14.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar14.TabIndex = 10;
             this.ribbonBar14.Text = "...........";
@@ -596,7 +595,7 @@ namespace QL_THUVIET_2021
             this.btnPhieuMuon});
             this.ribbonBar15.Location = new System.Drawing.Point(465, 0);
             this.ribbonBar15.Name = "ribbonBar15";
-            this.ribbonBar15.Size = new System.Drawing.Size(117, 212);
+            this.ribbonBar15.Size = new System.Drawing.Size(117, 154);
             this.ribbonBar15.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar15.TabIndex = 9;
             this.ribbonBar15.Text = ".........";
@@ -637,7 +636,7 @@ namespace QL_THUVIET_2021
             this.btnNhaXuatBan});
             this.ribbonBar9.Location = new System.Drawing.Point(351, 0);
             this.ribbonBar9.Name = "ribbonBar9";
-            this.ribbonBar9.Size = new System.Drawing.Size(114, 212);
+            this.ribbonBar9.Size = new System.Drawing.Size(114, 154);
             this.ribbonBar9.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar9.TabIndex = 7;
             this.ribbonBar9.Text = ".........";
@@ -678,7 +677,7 @@ namespace QL_THUVIET_2021
             this.btnTacGia});
             this.ribbonBar10.Location = new System.Drawing.Point(234, 0);
             this.ribbonBar10.Name = "ribbonBar10";
-            this.ribbonBar10.Size = new System.Drawing.Size(117, 212);
+            this.ribbonBar10.Size = new System.Drawing.Size(117, 154);
             this.ribbonBar10.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar10.TabIndex = 6;
             this.ribbonBar10.Text = ".........";
@@ -719,7 +718,7 @@ namespace QL_THUVIET_2021
             this.btnQLSinhVien});
             this.ribbonBar5.Location = new System.Drawing.Point(118, 0);
             this.ribbonBar5.Name = "ribbonBar5";
-            this.ribbonBar5.Size = new System.Drawing.Size(116, 212);
+            this.ribbonBar5.Size = new System.Drawing.Size(116, 154);
             this.ribbonBar5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar5.TabIndex = 3;
             this.ribbonBar5.Text = ".........";
@@ -760,7 +759,7 @@ namespace QL_THUVIET_2021
             this.btnQLNhanVien});
             this.ribbonBar6.Location = new System.Drawing.Point(4, 0);
             this.ribbonBar6.Name = "ribbonBar6";
-            this.ribbonBar6.Size = new System.Drawing.Size(114, 212);
+            this.ribbonBar6.Size = new System.Drawing.Size(114, 154);
             this.ribbonBar6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar6.TabIndex = 1;
             this.ribbonBar6.Text = ".........";
@@ -1122,7 +1121,7 @@ namespace QL_THUVIET_2021
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.tabMain.SelectedTabIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(1051, 298);
+            this.tabMain.Size = new System.Drawing.Size(1051, 294);
             this.tabMain.TabIndex = 1;
             this.tabMain.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabMain.Tabs.Add(this.tabGioiThieu);
@@ -1171,13 +1170,12 @@ namespace QL_THUVIET_2021
             // 
             // tabControlPanel1
             // 
-            this.tabControlPanel1.Controls.Add(this.label1);
             this.tabControlPanel1.Controls.Add(this.pictureBox1);
             this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 31);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(1051, 267);
+            this.tabControlPanel1.Size = new System.Drawing.Size(1051, 263);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1188,19 +1186,6 @@ namespace QL_THUVIET_2021
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabGioiThieu;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Calligraphy", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(-45, 211);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1130, 48);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Sinh Viên Thực Hiện: K\' Vảng and Nguyễn Hữu Tuấn";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -1208,7 +1193,7 @@ namespace QL_THUVIET_2021
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1049, 265);
+            this.pictureBox1.Size = new System.Drawing.Size(1049, 261);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -1278,7 +1263,7 @@ namespace QL_THUVIET_2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 521);
+            this.ClientSize = new System.Drawing.Size(1061, 517);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1300,7 +1285,6 @@ namespace QL_THUVIET_2021
             this.tabMain.ResumeLayout(false);
             this.ctmnMain.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
-            this.tabControlPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1375,7 +1359,6 @@ namespace QL_THUVIET_2021
         private DevComponents.DotNetBar.RibbonBar ribbonBar13;
         private DevComponents.DotNetBar.ButtonItem btnNoiQuy;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.RibbonBar ribbonBar15;
         private DevComponents.DotNetBar.ButtonItem btnPhieuMuon;
         private DevComponents.DotNetBar.RibbonBar ribbonBar14;
