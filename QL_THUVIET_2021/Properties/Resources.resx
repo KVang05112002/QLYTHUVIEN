@@ -130,6 +130,9 @@
   <data name="thethuvien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thethuvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="anh-nen-den-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\anh-nen-den-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tải xuống (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tải xuống (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,5 +153,8 @@
   </data>
   <data name="tải xuống1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tải xuống1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngegg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngegg1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

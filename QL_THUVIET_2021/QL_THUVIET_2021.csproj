@@ -340,6 +340,8 @@
     <None Include="Resources\mayin.jpg" />
     <None Include="Resources\tải xuống.jpg" />
     <None Include="Resources\tải xuống1.jpg" />
+    <None Include="Resources\anh-nen-den-4.jpg" />
+    <None Include="Resources\pngegg1.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

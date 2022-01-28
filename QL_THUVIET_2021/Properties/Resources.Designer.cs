@@ -63,6 +63,16 @@ namespace QL_THUVIET_2021.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anh_nen_den_4 {
+            get {
+                object obj = ResourceManager.GetObject("anh-nen-den-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dãnguat {
             get {
                 object obj = ResourceManager.GetObject("dãnguat", resourceCulture);
@@ -86,6 +96,16 @@ namespace QL_THUVIET_2021.Properties {
         internal static System.Drawing.Bitmap mayin {
             get {
                 object obj = ResourceManager.GetObject("mayin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngegg {
+            get {
+                object obj = ResourceManager.GetObject("pngegg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

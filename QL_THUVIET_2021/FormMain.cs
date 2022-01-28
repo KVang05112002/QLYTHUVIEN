@@ -113,6 +113,7 @@ namespace QL_THUVIET_2021
         private void buttonItem6_Click(object sender, EventArgs e)
         {
             styleManager1.ManagerStyle = eStyle.Office2007Black;
+           
         }
 
         private void buttonItem7_Click(object sender, EventArgs e)

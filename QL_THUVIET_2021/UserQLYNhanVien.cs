@@ -172,7 +172,6 @@ namespace QL_THUVIET_2021
                 return;
             }
             sql = "Execute dbo.sp_Update_NhanVien @MaNV = '"+txtMaNV.Text.Trim()+"', @HoTen =  N'" + txtTenNV.Text.Trim() + "', @GioiTinh = N'" + cboGioiTinh.Text.Trim() + "',@DiaChi= N'" + txtDiaChi.Text.Trim() + "',@NgaySinh='" + Function.Ngaythangnam(dtpNgaySinh.Text.Trim()) + "',@SoDT =  N'" + txtSoDT.Text.Trim() + "'";
-            //sql = "Update NhanVien set HoTen=N'" + txtTenNV.Text.Trim().ToString() + "',GioiTinh = N'" + cboGioiTinh.Text.Trim().ToString() + "', DiaChi = N'" + txtDiaChi.Text.Trim().ToString() + "',NgaySinh = '" + Function.Ngaythangnam(dtpNgaySinh.Text.Trim()) + "',SoDT= N'" + txtSoDT.Text.Trim().ToString() + "' where MaNV='" + txtMaNV.Text.Trim() + "'";
             Class.Function.RunSQL(sql);
             LoadDataGridView();
             ResetValues();
@@ -200,6 +199,11 @@ namespace QL_THUVIET_2021
             }    
             if(MessageBox.Show("Bạn có muốn xóa dữ liệu này không", "Question",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                sql = "select MaNV from PhieuNhacTra where MaNV=N'" + txtMaNV.Text + "'";
+                if (Class.Function.KiemTraKhoaTrung(sql))
+                {
+                    MessageBox.Show("Nhân viên này hiện đang thực hiện nhiệm vụ trong thư viên không thể xóa");
+                }
                 sql = "Delete NhanVien where MaNV='" + txtMaNV.Text + "'";
                 Class.Function.RunSQL(sql);
                 LoadDataGridView();
